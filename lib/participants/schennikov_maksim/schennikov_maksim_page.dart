@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_3/schennikov_maksim_lesson_3_page.dart';
 
 import 'lessons/lesson_2/schennikov_maksim_lesson_2_page.dart';
 
@@ -24,6 +25,16 @@ class SchennikovMaximPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                     return const SchennikovMaksimLesson2Page();
+                  }));
+                },
+                width: buttonWidth,
+                backgroundColor: const Color(0xFFB1CDCD),
+              ),
+              AppButton(
+                text: 'Lesson 3',
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                    return const SchennikovMaksimLesson3Page();
                   }));
                 },
                 width: buttonWidth,
