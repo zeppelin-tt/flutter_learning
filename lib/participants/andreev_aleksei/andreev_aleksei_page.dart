@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
 
 import 'lessons/lesson_2/andreev_aleksei_lesson_2_page.dart';
+import 'lessons/lesson_3/andreev_aleksei_lesson_3_page.dart';
 
 class AndreevAlekseiPage extends StatelessWidget {
   const AndreevAlekseiPage({
@@ -24,6 +25,16 @@ class AndreevAlekseiPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                     return const AndreevAlekseiLesson2Page();
+                  }));
+                },
+                width: buttonWidth,
+                backgroundColor: const Color(0xFFB1CDCD),
+              ),
+              AppButton(
+                text: 'Lesson 3',
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                    return AndreevAlekseiLesson3Page();
                   }));
                 },
                 width: buttonWidth,
