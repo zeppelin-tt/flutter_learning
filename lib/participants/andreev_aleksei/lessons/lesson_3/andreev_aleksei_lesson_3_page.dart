@@ -13,7 +13,6 @@ class AndreevAlekseiLesson3Page extends StatefulWidget {
 }
 
 class _AndreevAlekseiLesson3PageState extends State<AndreevAlekseiLesson3Page> {
-  String inputNumber = '';
   String displayText = '';
 
   @override
