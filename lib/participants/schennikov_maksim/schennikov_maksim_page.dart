@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
 import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_3/schennikov_maksim_lesson_3_page.dart';
 import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_5/schennikov_maksim_lesson_5_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_6/schennikov_maksim_lesson_6_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_7/schennikov_maksim_lesson_7_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_8/schennikov_maksim_lesson_8_page.dart';
 
 import 'lessons/lesson_2/schennikov_maksim_lesson_2_page.dart';
 import 'lessons/lesson_4/schennikov_maksim_lesson_4_page.dart';
@@ -57,6 +60,36 @@ class SchennikovMaximPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                     return const SchennikovMaksimLesson5Page();
+                  }));
+                },
+                width: buttonWidth,
+                backgroundColor: const Color(0xFFB1CDCD),
+              ),
+              AppButton(
+                text: 'Lesson 6',
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                    return const SchennikovMaksimLesson6Page();
+                  }));
+                },
+                width: buttonWidth,
+                backgroundColor: const Color(0xFFB1CDCD),
+              ),
+              AppButton(
+                text: 'Lesson 7',
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                    return const SchennikovMaksimLesson7Page();
+                  }));
+                },
+                width: buttonWidth,
+                backgroundColor: const Color(0xFFB1CDCD),
+              ),
+              AppButton(
+                text: 'Lesson 8',
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                    return const SchennikovMaksimLesson8Page();
                   }));
                 },
                 width: buttonWidth,

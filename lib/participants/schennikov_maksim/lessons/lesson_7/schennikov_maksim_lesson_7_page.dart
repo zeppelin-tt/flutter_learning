@@ -1,10 +1,20 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SchennikovMaksimLesson7Page extends StatelessWidget {
+class SchennikovMaksimLesson7Page extends StatefulWidget {
   const SchennikovMaksimLesson7Page({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<SchennikovMaksimLesson7Page> createState() => _SchennikovMaksimLesson7PageState();
+}
+
+class _SchennikovMaksimLesson7PageState extends State<SchennikovMaksimLesson7Page> {
+  final rnd = Random();
+  Offset circleButtonOffset = const Offset(100, 100);
 
   @override
   Widget build(BuildContext context) {
@@ -87,14 +97,25 @@ class SchennikovMaksimLesson7Page extends StatelessWidget {
                 //     ),
                 //   ),
                 // ),
-                Positioned(
-                  left: 0.5.sw - 15,
-                  top: 0.5.sh - ScreenUtil().statusBarHeight - 15,
-                  child: ClipOval(
-                    child: Container(
-                      color: Colors.red,
-                      width: 30,
-                      height: 30,
+                AnimatedPositioned(
+                  duration: const Duration(seconds: 1),
+                  left: circleButtonOffset.dx,
+                  top: circleButtonOffset.dy,
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        circleButtonOffset = Offset(
+                          rnd.nextDouble() * 1.sw - 30,
+                          rnd.nextDouble() * 1.sh - 30,
+                        );
+                      });
+                    },
+                    child: ClipOval(
+                      child: Container(
+                        color: Colors.red,
+                        width: 30,
+                        height: 30,
+                      ),
                     ),
                   ),
                 ),
