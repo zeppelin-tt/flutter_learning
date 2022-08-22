@@ -42,12 +42,10 @@ class _SchennikovMaksimLesson3PageState extends State<SchennikovMaksimLesson3Pag
 class _NewWidget extends StatefulWidget {
   final Color backgroundColor;
   final bool isCircle;
-  final VoidCallback? onTap;
 
   const _NewWidget({
     required this.backgroundColor,
     required this.isCircle,
-    this.onTap,
     Key? key,
   }) : super(key: key);
 

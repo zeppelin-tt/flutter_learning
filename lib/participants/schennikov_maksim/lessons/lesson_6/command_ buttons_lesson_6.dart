@@ -32,7 +32,7 @@ class CommandButtonsLesson6 extends StatelessWidget {
               onPressed: rectModel.setRandomColor,
               child: const Text('Change color', style: TextStyle(color: Colors.black, fontSize: 24)),
             ),
-             TextButton(
+            TextButton(
               onPressed: () => rectModel.setIsOval(isOval: !rectModel.isOval),
               child: const Text('Change shape', style: TextStyle(color: Colors.black, fontSize: 24)),
             ),

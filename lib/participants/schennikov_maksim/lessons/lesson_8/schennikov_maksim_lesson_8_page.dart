@@ -8,7 +8,7 @@ class SchennikovMaksimLesson8Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamAnimation();
+    return const StreamAnimation();
   }
 }
 
