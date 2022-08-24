@@ -38,6 +38,9 @@ class _AndreevAlekseiLesson4PageState extends State<AndreevAlekseiLesson4Page> {
               inputFormatters: [
                 NoSpacesTextInputFormatter(),
               ],
+              decoration: const InputDecoration(
+                hintText: 'print some letters here',
+              ),
               onChanged: (text) {
                 textFieldController3.text =
                 '${textFieldController1.text} ${textFieldController2.text}';
@@ -48,16 +51,26 @@ class _AndreevAlekseiLesson4PageState extends State<AndreevAlekseiLesson4Page> {
               inputFormatters: [
                 NoSpacesTextInputFormatter(),
               ],
+              decoration: const InputDecoration(
+                hintText: 'and here too!',
+              ),
               onChanged: (text) {
                 textFieldController3.text =
                 '${textFieldController1.text} ${textFieldController2.text}';
               },
+            ),
+            const SizedBox(
+              height: 20,
             ),
             TextField(
               controller: textFieldController3,
               inputFormatters: [
                 SpaceProtectorInputFormatter(),
               ],
+              decoration: const InputDecoration(
+                helperText: 'this is fine!',
+                border: OutlineInputBorder(),
+              ),
               onChanged: (text) {
                 textFieldController1.text = currentTextReturner1(text);
                 textFieldController2.text = currentTextReturner2(text);
