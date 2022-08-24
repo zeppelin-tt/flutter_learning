@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_3/schennikov_maksim_lesson_3_page.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_5/schennikov_maksim_lesson_5_page.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_6/schennikov_maksim_lesson_6_page.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_7/schennikov_maksim_lesson_7_page.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_8/schennikov_maksim_lesson_8_page.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_9/schennikov_maksim_lesson_9_page.dart';
-
-import 'lessons/lesson_2/schennikov_maksim_lesson_2_page.dart';
-import 'lessons/lesson_4/schennikov_maksim_lesson_4_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_02/schennikov_maksim_lesson_2_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_03/schennikov_maksim_lesson_3_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_04/schennikov_maksim_lesson_4_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/schennikov_maksim_lesson_5_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_06/schennikov_maksim_lesson_6_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_07/schennikov_maksim_lesson_7_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_08/schennikov_maksim_lesson_8_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_09/schennikov_maksim_lesson_9_page.dart';
 
 class SchennikovMaximPage extends StatelessWidget {
   const SchennikovMaximPage({

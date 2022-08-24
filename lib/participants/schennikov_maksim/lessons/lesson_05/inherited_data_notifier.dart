@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_5/data_model_notifier.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/data_model_notifier.dart';
 
 class InheritedDataNotifier extends InheritedNotifier<DataModelNotifier> {
   final DataModelNotifier controller;
@@ -12,6 +11,6 @@ class InheritedDataNotifier extends InheritedNotifier<DataModelNotifier> {
   }) : super(key: key, child: child, notifier: controller);
 
   static InheritedDataNotifier? of(BuildContext context) {
-   return context.dependOnInheritedWidgetOfExactType<InheritedDataNotifier>();
+    return context.dependOnInheritedWidgetOfExactType<InheritedDataNotifier>();
   }
 }

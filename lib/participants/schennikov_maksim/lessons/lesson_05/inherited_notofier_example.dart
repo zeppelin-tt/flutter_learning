@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_5/data_model_notifier.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_5/inherited_data_notifier.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/data_model_notifier.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/inherited_data_notifier.dart';
 
 import 'animated_rect_depend_on_inhereted.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_8/stream_animation.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_08/stream_animation.dart';
 
 class SchennikovMaksimLesson8Page extends StatelessWidget {
   const SchennikovMaksimLesson8Page({

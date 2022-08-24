@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_6/animated_rect_lesson_6.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_6/command_%20buttons_lesson_6.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_06/animated_rect_lesson_6.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_06/command_%20buttons_lesson_6.dart';
 import 'package:provider/provider.dart';
 
 class SchennikovMaksimLesson6Page extends StatelessWidget {

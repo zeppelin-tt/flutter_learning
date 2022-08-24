@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_6/schennikov_maksim_lesson_6_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_06/schennikov_maksim_lesson_6_page.dart';
 import 'package:provider/provider.dart';
 
 class CommandButtonsLesson6 extends StatelessWidget {

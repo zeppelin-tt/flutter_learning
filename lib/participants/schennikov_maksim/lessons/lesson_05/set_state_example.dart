@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_5/inherited_data_provider.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/animated_rect_depend_on_inhereted.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/inherited_data_provider.dart';
 
-import 'animated_rect_depend_on_inhereted.dart';
-
-class InheritedWidgetExample extends StatefulWidget {
-  const InheritedWidgetExample({
+class SetStateExample extends StatefulWidget {
+  const SetStateExample({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<InheritedWidgetExample> createState() => _InheritedWidgetExampleState();
+  State<SetStateExample> createState() => _SetStateExampleState();
 }
 
-class _InheritedWidgetExampleState extends State<InheritedWidgetExample> {
+class _SetStateExampleState extends State<SetStateExample> {
   bool isOval = true;
 
   @override
