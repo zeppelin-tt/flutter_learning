@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AnimatedRectLesson6 extends StatelessWidget {
   final VoidCallback? onTap;
-  final double height;
-  final double width;
-//  final double radius;
+  final double radius;
   final Color color;
 
   const AnimatedRectLesson6({
-    required this.height,
-    required this.width,
-//    required this.radius,
+    required this.radius,
     required this.color,
     this.onTap,
     Key? key,
@@ -21,11 +18,11 @@ class AnimatedRectLesson6 extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 600),
-        height: height,
-        width: width,
+        duration: const Duration(milliseconds: 350),
+        height: radius,
+        width: radius,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(200),
+          borderRadius: BorderRadius.circular(radius),
           color: color,
         ),
       ),

@@ -33,7 +33,11 @@ class MainPage extends StatelessWidget {
                 ),
                 AppButton(
                   text: 'Алексей Андреев',
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                      return const AndreevAlekseiPage();
+                    }));
+                  },
                   width: buttonWidth,
                 ),
                 AppButton(
