@@ -1,19 +1,19 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_09/animated_rects_lesson_9.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_10/animated_rects_lesson_10.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class WidgetForAnimationLesson9 extends StatefulWidget {
-  const WidgetForAnimationLesson9({
+class WidgetForAnimationLesson10 extends StatefulWidget {
+  const WidgetForAnimationLesson10({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<WidgetForAnimationLesson9> createState() => _WidgetForAnimationLesson9State();
+  State<WidgetForAnimationLesson10> createState() => _WidgetForAnimationLesson10State();
 }
 
-class _WidgetForAnimationLesson9State extends State<WidgetForAnimationLesson9> with TickerProviderStateMixin {
+class _WidgetForAnimationLesson10State extends State<WidgetForAnimationLesson10> with TickerProviderStateMixin {
   final rnd = Random();
   late AnimationController controller;
   final angleTween = Tween<double>(begin: 0, end: pi * 2);
@@ -64,7 +64,7 @@ class _WidgetForAnimationLesson9State extends State<WidgetForAnimationLesson9> w
             aspectRatio: 1,
             child: SizedBox(
               width: 1.sw,
-              child: AnimatedRectsLesson9(
+              child: AnimatedRectsLesson10(
                 controller: controller,
                 maxRadius: maxRadius,
                 radius: radius,
