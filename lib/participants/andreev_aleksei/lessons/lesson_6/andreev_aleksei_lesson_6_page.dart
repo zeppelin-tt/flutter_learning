@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_6/animated_rect_lesson_6.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,19 +12,40 @@ class AndreevAlekseiLesson6Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: SafeArea(
-        child: Stack(children: [
-          for (var i = 0; i < 69; i++)
-            Positioned(
-                left: ((1.5 + Random().nextInt(85)) / 100).sw,
-                top: ((1.5 + Random().nextInt(90)) / 100).sh,
-                child: AnimatedRectLesson6(
-                  color: Color.fromRGBO(Random().nextInt(255),
-                      Random().nextInt(255), Random().nextInt(255), 1),
-                  radius: ((5 + Random().nextInt(10)) / 100).sw,
-                )),
-        ]),
+      child: ChangeNotifierProvider(
+        create: (_) => MyModel(),
+        child: SafeArea(
+          child: Stack(children: [
+            for (var i = 0; i < 69; i++)
+              Positioned(
+                  left: (0.02 + Random().nextInt(68) / 100).sw,
+                  top: (0.02 + Random().nextInt(80) / 100).sh,
+                  child: AnimatedBubbleLesson6(
+                    color: Color.fromRGBO(Random().nextInt(255),
+                        Random().nextInt(255), Random().nextInt(255), 1),
+                    radius: (0.05 + (Random().nextInt(100)) / 1000).sw,
+                    isDestroyingWidget: false,
+                  )),
+          ]),
+        ),
       ),
     );
+  }
+}
+
+class MyModel extends ChangeNotifier {
+  bool radiusIsIncreased = false;
+  bool radiusIsDecreased = false;
+
+  void changingTheRadius({required bool isIncreasingRadius}) {
+    radiusIsIncreased = false;
+    radiusIsDecreased = false;
+    if (isIncreasingRadius) {
+      radiusIsIncreased = true;
+      notifyListeners();
+    } else {
+      radiusIsDecreased = true;
+      notifyListeners();
+    }
   }
 }
