@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_6/andreev_aleksei_lesson_6_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
