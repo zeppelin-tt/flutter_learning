@@ -9,8 +9,6 @@ class PinCodeProvider extends ChangeNotifier {
   bool isCorrectPinCode = false;
   bool pinCodeChecked = false;
   bool isNewAttempt = false;
-  bool keyboardisBlocked = false;
-  bool isReturningError = false;
 
   int attemptsQuantity = 3;
 
@@ -99,11 +97,6 @@ class PinCodeProvider extends ChangeNotifier {
     error = 'Неверный пин-код \n Осталось  попыток: $attemptsQuantity';
     inputNumber = '';
     isNewAttempt = true;
-
-    if (attemptsQuantity == 0) {
-      error = 'Все пропало!';
-      keyboardisBlocked = true;
-    }
     notifyListeners();
   }
 
@@ -120,5 +113,12 @@ class PinCodeProvider extends ChangeNotifier {
     inputNumber = '';
     pinCode = '';
     error = '';
+  }
+
+  void anotherAttempt(){
+    attemptsQuantity = 3;
+    error = '';
+    pinCodeChecked = false;
+    clear();
   }
 }

@@ -75,6 +75,7 @@ class AnimatedDot extends StatelessWidget {
               border: Border.all(color: borderColor)),
           onEnd: () {
             if (position == 4 && pinCodeProvider.gotFourth && !isCheckingPage) {
+              pinCodeProvider.rememberPinCode();
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                 return const ButtonPage();
               }));
@@ -91,8 +92,19 @@ class AnimatedDot extends StatelessWidget {
             if (position == 4 &&
                 pinCodeProvider.gotFourth &&
                 isCheckingPage &&
-                !pinCodeProvider.isCorrectPinCode) {
+                !pinCodeProvider.isCorrectPinCode &&
+                pinCodeProvider.attemptsQuantity != 0) {
               pinCodeProvider.pinCodeCheckingError();
+            }
+            if (position == 4 &&
+                pinCodeProvider.gotFourth &&
+                isCheckingPage &&
+                !pinCodeProvider.isCorrectPinCode &&
+                pinCodeProvider.attemptsQuantity == 0) {
+              pinCodeProvider.anotherAttempt();
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const ButtonPage();
+              }));
             }
           },
         ));

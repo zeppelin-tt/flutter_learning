@@ -20,9 +20,7 @@ class Keyboard extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.receivingDigit('7');
-            }
+            pinCodeProvider.receivingDigit('7');
           },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -37,9 +35,7 @@ class Keyboard extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.receivingDigit('8');
-            }
+            pinCodeProvider.receivingDigit('8');
           },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -54,9 +50,7 @@ class Keyboard extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.receivingDigit('9');
-            }
+            pinCodeProvider.receivingDigit('9');
           },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -71,9 +65,7 @@ class Keyboard extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.receivingDigit('4');
-            }
+            pinCodeProvider.receivingDigit('4');
           },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -88,9 +80,7 @@ class Keyboard extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.receivingDigit('5');
-            }
+            pinCodeProvider.receivingDigit('5');
           },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -105,9 +95,7 @@ class Keyboard extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.receivingDigit('6');
-            }
+            pinCodeProvider.receivingDigit('6');
           },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -122,9 +110,7 @@ class Keyboard extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.receivingDigit('1');
-            }
+            pinCodeProvider.receivingDigit('1');
           },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -139,9 +125,7 @@ class Keyboard extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.receivingDigit('2');
-            }
+            pinCodeProvider.receivingDigit('2');
           },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -156,9 +140,7 @@ class Keyboard extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.receivingDigit('3');
-            }
+            pinCodeProvider.receivingDigit('3');
           },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -186,9 +168,7 @@ class Keyboard extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.receivingDigit('0');
-            }
+            pinCodeProvider.receivingDigit('0');
           },
           style: ButtonStyle(
             overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -202,11 +182,7 @@ class Keyboard extends StatelessWidget {
           ),
         ),
         IconButton(
-          onPressed: () {
-            if (!pinCodeProvider.keyboardisBlocked) {
-              pinCodeProvider.clear();
-            }
-          },
+          onPressed: pinCodeProvider.clear,
           icon: const Icon(Icons.arrow_back),
           iconSize: 35,
           splashRadius: 70,
