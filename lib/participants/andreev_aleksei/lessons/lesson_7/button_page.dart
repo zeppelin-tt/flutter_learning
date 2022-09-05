@@ -7,31 +7,34 @@ class ButtonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return Material(
-        color: Colors.white,
-        child: GestureDetector(
-          onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-              return const CheckPinCodePage();
-            }));
-          },
-          child: Center(
-            child: Container(
-                height: 75,
-                width: 150,
-                alignment: Alignment.center,
-                color: Colors.black,
-                child: const Center(
-                  child: Text(
-                    'Сменить пин-код',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.white,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Material(
+          color: Colors.white,
+          child: GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const CheckPinCodePage();
+              }));
+            },
+            child: Center(
+              child: Container(
+                  height: 75,
+                  width: 150,
+                  alignment: Alignment.center,
+                  color: Colors.black,
+                  child: const Center(
+                    child: Text(
+                      'Сменить пин-код',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-                )),
-          ),
-        ));
+                  )),
+            ),
+          )),
+    );
   }
 }
