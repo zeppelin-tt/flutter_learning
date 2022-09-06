@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_11/assets_lesson_11_page.dart';
+import 'package:flutter_learning/main_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Main());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({
-    Key? key,
-  }) : super(key: key);
+class Main extends StatelessWidget {
+  const Main({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, snapshot) {
         return const MaterialApp(
-          home: AssetsLesson11Page(),
+          home: MainPage(),
         );
       },
     );

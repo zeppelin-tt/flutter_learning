@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
 class StreamAnimation extends StatefulWidget {
-  const StreamAnimation({Key? key}) : super(key: key);
+  const StreamAnimation({super.key});
 
   @override
   State<StreamAnimation> createState() => _StreamAnimationState();
@@ -20,13 +20,7 @@ class _StreamAnimationState extends State<StreamAnimation> {
   @override
   void initState() {
     super.initState();
-    Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (valueController.value == 0) {
-        timer.cancel();
-        return;
-      }
-      valueController.add(valueController.value - 1);
-    });
+    Timer.periodic(const Duration(seconds: 1), tick);
   }
 
   @override
@@ -76,7 +70,7 @@ class _StreamAnimationState extends State<StreamAnimation> {
                 return AnimatedSwitcher(
                   duration: duration,
                   child: Text(
-                    '${value.requireData.round()}',
+                    '${value.requireData}',
                     key: ValueKey<int>(value.requireData),
                     style: const TextStyle(color: Colors.red, fontSize: 46),
                   ),
@@ -118,8 +112,17 @@ class _StreamAnimationState extends State<StreamAnimation> {
   }
 
   @override
-  void dispose() {
+  Future<void> dispose() async {
     super.dispose();
-    valueController.close();
+    await valueController.close();
+    await textSizeController.close();
+  }
+
+  void tick(Timer timer) {
+    if (valueController.value == 0) {
+      timer.cancel();
+      return;
+    }
+    valueController.add(valueController.value - 1);
   }
 }

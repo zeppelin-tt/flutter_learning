@@ -1,9 +1,10 @@
-
 // TODO(maxim):  [18.08.2022]
 import 'package:flutter/material.dart';
 
 class AnimatedText extends StatelessWidget {
-  const AnimatedText({Key? key}) : super(key: key);
+  const AnimatedText({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

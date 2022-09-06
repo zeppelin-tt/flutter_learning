@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/animated_rect_depend_on_inherited.dart';
 import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/data_model_notifier.dart';
 import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/inherited_data_notifier.dart';
 
-import 'animated_rect_depend_on_inhereted.dart';
-
 class InheritedNotifierExample extends StatefulWidget {
   const InheritedNotifierExample({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<InheritedNotifierExample> createState() => _InheritedNotifierExampleState();

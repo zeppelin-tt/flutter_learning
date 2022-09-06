@@ -7,8 +7,8 @@ import 'package:provider/provider.dart';
 
 class SchennikovMaksimLesson6Page extends StatelessWidget {
   const SchennikovMaksimLesson6Page({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -68,6 +68,7 @@ class DescriptionModel {
 class RectModel extends ChangeNotifier {
   final _rnd = Random();
 
+  //ignore_for_file: member-ordering-extended
   bool isOval;
   double height;
   double width;

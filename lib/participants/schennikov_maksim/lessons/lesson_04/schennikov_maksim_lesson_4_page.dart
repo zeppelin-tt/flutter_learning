@@ -1,12 +1,13 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class SchennikovMaksimLesson4Page extends StatefulWidget {
   const SchennikovMaksimLesson4Page({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<SchennikovMaksimLesson4Page> createState() => _SchennikovMaksimLesson4PageState();
@@ -23,7 +24,9 @@ class _SchennikovMaksimLesson4PageState extends State<SchennikovMaksimLesson4Pag
   void initState() {
     super.initState();
     focusNode.addListener(() {
-      print('focusNode.hasFocus: ${focusNode.hasFocus}');
+      if (kDebugMode) {
+        print('focusNode.hasFocus: ${focusNode.hasFocus}');
+      }
     });
     // textController.addListener(() => print(textController.selection));
   }
@@ -38,29 +41,30 @@ class _SchennikovMaksimLesson4PageState extends State<SchennikovMaksimLesson4Pag
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             StreamBuilder<String>(
-                initialData: '',
-                stream: streamTextController.stream,
-                builder: (context, snapshot) {
-                  return TextField(
-                    style: const TextStyle(color: Colors.black, fontSize: 25),
-                    focusNode: focusNode,
-                    textAlign: TextAlign.center,
-                    maxLines: 5,
-                    inputFormatters: [
-                      OnlyNumericTextInputFormatter(),
-                    ],
-                    decoration: InputDecoration(
-                      hintText: 'Hint Text',
-                      helperText: 'Helper Text 5',
-                      counterText: snapshot.requireData.length.toString(),
-                      border: const OutlineInputBorder(),
-                    ),
-                    onChanged: (text) {
-                      currentText = text;
-                      streamTextController.add(text);
-                    },
-                  );
-                }),
+              initialData: '',
+              stream: streamTextController.stream,
+              builder: (context, snapshot) {
+                return TextField(
+                  style: const TextStyle(color: Colors.black, fontSize: 25),
+                  focusNode: focusNode,
+                  textAlign: TextAlign.center,
+                  maxLines: 5,
+                  inputFormatters: [
+                    OnlyNumericTextInputFormatter(),
+                  ],
+                  decoration: InputDecoration(
+                    hintText: 'Hint Text',
+                    helperText: 'Helper Text 5',
+                    counterText: snapshot.requireData.length.toString(),
+                    border: const OutlineInputBorder(),
+                  ),
+                  onChanged: (text) {
+                    currentText = text;
+                    streamTextController.add(text);
+                  },
+                );
+              },
+            ),
             TextField(
               style: const TextStyle(color: Colors.black, fontSize: 25),
               // focusNode: focusNode,
@@ -91,7 +95,7 @@ class _SchennikovMaksimLesson4PageState extends State<SchennikovMaksimLesson4Pag
                 'requestFocus to first field',
                 style: TextStyle(color: Colors.black, fontSize: 25),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -7,14 +7,14 @@ packages:
       name: _fe_analyzer_shared
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "43.0.0"
+    version: "46.0.0"
   analyzer:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.3.1"
+    version: "4.6.0"
   analyzer_plugin:
     dependency: transitive
     description:
@@ -114,12 +114,12 @@ packages:
     source: hosted
     version: "0.17.2"
   dart_code_metrics:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: dart_code_metrics
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.17.0"
+    version: "4.17.1"
   dart_style:
     dependency: transitive
     description:
@@ -167,13 +167,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.3.0"
-  flutter_lints:
-    dependency: transitive
-    description:
-      name: flutter_lints
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.4"
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -221,13 +214,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.1"
-  lints:
-    dependency: transitive
-    description:
-      name: lints
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.1"
   matcher:
     dependency: transitive
     description:
@@ -443,13 +429,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.1"
-  surf_lint_rules:
-    dependency: "direct dev"
-    description:
-      name: surf_lint_rules
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.5.0"
   synchronized:
     dependency: transitive
     description:

@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 
 class CommandButtonsLesson6 extends StatelessWidget {
   const CommandButtonsLesson6({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

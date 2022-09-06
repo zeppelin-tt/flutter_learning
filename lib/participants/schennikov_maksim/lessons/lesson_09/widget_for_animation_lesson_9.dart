@@ -6,27 +6,27 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WidgetForAnimationLesson9 extends StatefulWidget {
   const WidgetForAnimationLesson9({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<WidgetForAnimationLesson9> createState() => _WidgetForAnimationLesson9State();
 }
 
 class _WidgetForAnimationLesson9State extends State<WidgetForAnimationLesson9> with TickerProviderStateMixin {
+  static const rectSize = Size(50, 50);
   final rnd = Random();
-  late AnimationController controller;
   final angleTween = Tween<double>(begin: 0, end: pi * 2);
   final colorTween = ColorTween(begin: Colors.red, end: Colors.blue);
   late final Animation<double> animation;
   final maxRadius = 0.5.sw;
-  static const rectSize = Size(50, 50);
-  late Offset offset;
-  late Offset offset2;
-  late final double radius;
   final scrollController = ScrollController();
   final scrollItemWidth = 90.0;
   final maxScrollOffset = 11 * 90 - 1.sw;
+  late final double radius;
+  late AnimationController controller;
+  late Offset offset;
+  late Offset offset2;
 
   @override
   void initState() {

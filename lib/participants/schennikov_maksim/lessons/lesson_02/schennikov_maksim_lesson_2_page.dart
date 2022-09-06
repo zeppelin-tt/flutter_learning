@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class SchennikovMaksimLesson2Page extends StatelessWidget {
   const SchennikovMaksimLesson2Page({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class SchennikovMaksimLesson2Page extends StatelessWidget {
                   height: 300,
                   width: 300,
                   color: Colors.red,
-                  child:  const Center(
+                  child: const Center(
                     child: Text(
                       'Вам понравилось? Вам понравилось? Вам понравилось? Вам понравилось? Вам понравилось?',
                       style: TextStyle(
@@ -46,9 +46,7 @@ class SchennikovMaksimLesson2Page extends StatelessWidget {
 }
 
 class _CustomWidget extends StatelessWidget {
-  const _CustomWidget({
-    Key? key,
-  }) : super(key: key);
+  const _CustomWidget();
 
   @override
   Widget build(BuildContext context) {
@@ -57,15 +55,16 @@ class _CustomWidget extends StatelessWidget {
       height: 250,
       alignment: Alignment.bottomCenter,
       padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 100),
-      decoration: BoxDecoration(
-          color: Colors.red,
-          border: Border.all(color: Colors.blueAccent, width: 5),
-          borderRadius: BorderRadius.circular(735),
-          boxShadow: const [
-            BoxShadow(color: Colors.blue, blurRadius: 25, offset: Offset(20, 20)),
-            BoxShadow(color: Colors.black26, blurRadius: 40, offset: Offset(40, 40)),
-          ],
-          gradient: const LinearGradient(colors: [Colors.red, Colors.white])),
+      decoration: const BoxDecoration(
+        color: Colors.red,
+        border: Border.fromBorderSide(BorderSide(color: Colors.blueAccent, width: 5)),
+        borderRadius: BorderRadius.all(Radius.circular(735)),
+        boxShadow: [
+          BoxShadow(color: Colors.blue, blurRadius: 25, offset: Offset(20, 20)),
+          BoxShadow(color: Colors.black26, blurRadius: 40, offset: Offset(40, 40)),
+        ],
+        gradient: LinearGradient(colors: [Colors.red, Colors.white]),
+      ),
       child: const ColoredBox(
         color: Colors.amber,
       ),

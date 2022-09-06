@@ -10,11 +10,11 @@ class SvgIcon extends StatelessWidget {
 
   const SvgIcon(
     this.name, {
-    Key? key,
+    super.key,
     this.color,
     this.size,
     this.semanticLabel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

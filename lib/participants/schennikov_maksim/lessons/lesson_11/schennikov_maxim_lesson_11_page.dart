@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class AssetsLesson11Page extends StatelessWidget {
-  const AssetsLesson11Page({
+class SchennikovMaximLesson11Page extends StatelessWidget {
+  const SchennikovMaximLesson11Page({
     super.key,
   });
 
@@ -40,13 +40,13 @@ class AssetsLesson11Page extends StatelessWidget {
             children: [
               SvgPicture.asset('assets/svg/icon_calc_as_qr.svg', width: 45, color: Colors.red),
               const SizedBox(width: 15),
-              SvgPicture.asset('assets/svg/gear.svg', width: 45, color: Colors.blue)
+              SvgPicture.asset('assets/svg/gear.svg', width: 45, color: Colors.blue),
             ],
           ),
           const Text(
             'Hello World!',
             style: TextStyle(color: Colors.yellow, fontSize: 50),
-          )
+          ),
         ],
       ),
     );
