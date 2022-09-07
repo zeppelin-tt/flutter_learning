@@ -7,8 +7,8 @@ class Keyboard extends StatelessWidget {
   const Keyboard({
     required this.valueChangedOnTap,
     required this.onClean,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
