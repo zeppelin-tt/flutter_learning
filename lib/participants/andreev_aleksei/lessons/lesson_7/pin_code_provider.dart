@@ -32,7 +32,7 @@ class PinCodeProvider extends ChangeNotifier {
     if (inputNumber.length == 3) {
       receivingFourthDigit(digit);
       return;
-    } else {}
+    }
   }
 
   void receivingFirstDigit(String digit) {
@@ -115,7 +115,7 @@ class PinCodeProvider extends ChangeNotifier {
     error = '';
   }
 
-  void anotherAttempt(){
+  void anotherAttempt() {
     attemptsQuantity = 3;
     error = '';
     pinCodeChecked = false;

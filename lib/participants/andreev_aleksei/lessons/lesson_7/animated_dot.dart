@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/andreev_aleksei_lesson_7_page.dart';
+import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/button_page.dart';
 import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/pin_code_provider.dart';
 import 'package:provider/provider.dart';
-import 'andreev_aleksei_lesson_7_page.dart';
-import 'button_page.dart';
 
 class AnimatedDot extends StatelessWidget {
-  AnimatedDot({required this.position, required this.isCheckingPage, Key? key})
-      : super(key: key);
 
   Color color = Colors.white;
   Color borderColor = Colors.black;
   int position;
   VoidCallback? onEnd;
   bool isCheckingPage;
+
+  AnimatedDot({required this.position, required this.isCheckingPage, super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -70,9 +72,9 @@ class AnimatedDot extends StatelessWidget {
           height: 15,
           width: 15,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: const BorderRadius.all(Radius.circular(15)),
               color: color,
-              border: Border.all(color: borderColor)),
+              border: Border.all(color: borderColor),),
           onEnd: () {
             if (position == 4 && pinCodeProvider.gotFourth && !isCheckingPage) {
               pinCodeProvider.rememberPinCode();
@@ -107,6 +109,6 @@ class AnimatedDot extends StatelessWidget {
               }));
             }
           },
-        ));
+        ),);
   }
 }
