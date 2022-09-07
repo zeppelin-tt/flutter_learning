@@ -13,27 +13,29 @@ class AndreevAlekseiLesson6Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: ChangeNotifierProvider(
-        create: (_) => MyModel(),
+        create: (_) => BubblesBehaviorModel(),
         child: SafeArea(
-          child: Stack(children: [
-            for (var i = 0; i < 69; i++)
-              Positioned(
-                  left: (0.02 + Random().nextInt(68) / 100).sw,
-                  top: (0.02 + Random().nextInt(80) / 100).sh,
-                  child: AnimatedBubbleLesson6(
-                    color: Color.fromRGBO(Random().nextInt(255),
-                        Random().nextInt(255), Random().nextInt(255), 1),
-                    radius: (0.05 + (Random().nextInt(100)) / 1000).sw,
-                    isDestroyingWidget: false,
-                  )),
-          ]),
+          child: Stack(
+            children: List.generate(
+              68,
+              (index) => Positioned(
+                left: (0.02 + Random().nextInt(68) / 100).sw,
+                top: (0.02 + Random().nextInt(80) / 100).sh,
+                child: AnimatedBubbleLesson6(
+                  color: Color.fromRGBO(Random().nextInt(255), Random().nextInt(255), Random().nextInt(255), 1),
+                  radius: (0.05 + (Random().nextInt(100)) / 1000).sw,
+                  isDestroyingWidget: false,
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );
   }
 }
 
-class MyModel extends ChangeNotifier {
+class BubblesBehaviorModel extends ChangeNotifier {
   bool radiusIsIncreased = false;
   bool radiusIsDecreased = false;
 

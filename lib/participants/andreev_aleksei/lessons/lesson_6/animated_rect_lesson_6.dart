@@ -18,7 +18,7 @@ class AnimatedBubbleLesson6 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final myModel = context.watch<MyModel>();
+    final myModel = context.watch<BubblesBehaviorModel>();
 
     if (myModel.radiusIsDecreased) {
       radius = radius * 0.98;
@@ -27,7 +27,7 @@ class AnimatedBubbleLesson6 extends StatelessWidget {
       radius = radius * 1.03;
     }
 
-    if(radius > 0 && radius < 0.05.sw){
+    if (radius > 0 && radius < 0.05.sw) {
       radius = 0;
       isDestroyingWidget = true;
     }
