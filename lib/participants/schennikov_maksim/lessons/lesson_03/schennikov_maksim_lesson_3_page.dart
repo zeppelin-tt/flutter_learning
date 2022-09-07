@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class SchennikovMaksimLesson3Page extends StatefulWidget {
   const SchennikovMaksimLesson3Page({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<SchennikovMaksimLesson3Page> createState() => _SchennikovMaksimLesson3PageState();
@@ -20,7 +20,6 @@ class _SchennikovMaksimLesson3PageState extends State<SchennikovMaksimLesson3Pag
 
   @override
   Widget build(BuildContext context) {
-    print('ping');
     return Material(
       color: Colors.white,
       child: Column(
@@ -42,14 +41,11 @@ class _SchennikovMaksimLesson3PageState extends State<SchennikovMaksimLesson3Pag
 class _NewWidget extends StatefulWidget {
   final Color backgroundColor;
   final bool isCircle;
-  final VoidCallback? onTap;
 
   const _NewWidget({
     required this.backgroundColor,
     required this.isCircle,
-    this.onTap,
-    Key? key,
-  }) : super(key: key);
+  });
 
   @override
   State<_NewWidget> createState() => _NewWidgetState();
@@ -72,7 +68,7 @@ class _NewWidgetState extends State<_NewWidget> {
         // duration: const Duration(seconds: 1),
         // curve: Curves.bounceInOut,
         decoration: BoxDecoration(
-          borderRadius: widget.isCircle ? BorderRadius.circular(200) : BorderRadius.zero,
+          borderRadius: widget.isCircle ? const BorderRadius.all(Radius.circular(200)) : BorderRadius.zero,
           color: _color,
         ),
         child: const Center(
