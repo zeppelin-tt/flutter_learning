@@ -3,6 +3,7 @@ import 'package:flutter_learning/components/app_button.dart';
 import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_3/schennikov_maksim_lesson_3_page.dart';
 
 import 'lessons/lesson_2/schennikov_maksim_lesson_2_page.dart';
+import 'lessons/lesson_3/schennikov_maksim_lesson_3_page.dart';
 
 class SchennikovMaximPage extends StatelessWidget {
   const SchennikovMaximPage({

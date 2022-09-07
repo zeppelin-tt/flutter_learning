@@ -10,8 +10,7 @@ class AndreevAlekseiLesson3Page extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<AndreevAlekseiLesson3Page> createState() =>
-      _AndreevAlekseiLesson3PageState();
+  State<AndreevAlekseiLesson3Page> createState() => _AndreevAlekseiLesson3PageState();
 }
 
 class _AndreevAlekseiLesson3PageState extends State<AndreevAlekseiLesson3Page> {
@@ -42,16 +41,14 @@ class _AndreevAlekseiLesson3PageState extends State<AndreevAlekseiLesson3Page> {
             });
           },
           valueChangedOnTap: (val) {
-            setState(() {
-              if (displayText.length <= 9) {
-                displayText = displayText + val;
-              }
-              else {
-                return;
-              }
-            });
+            if (displayText.length <= 9) {
+              setState(() {
+                {
+                  displayText = displayText + val;
+                }
+              });
+            }
           },
-
         ),
       ]),
     ));
