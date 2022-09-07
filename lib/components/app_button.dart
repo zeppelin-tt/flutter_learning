@@ -15,8 +15,8 @@ class AppButton extends StatelessWidget {
     this.isInverted = false,
     this.backgroundColor = const Color(0xFFD0E060),
     this.textColor = const Color(0xFF373A35),
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
