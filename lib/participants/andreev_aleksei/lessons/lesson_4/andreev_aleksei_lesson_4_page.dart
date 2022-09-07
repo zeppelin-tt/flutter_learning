@@ -7,8 +7,7 @@ class AndreevAlekseiLesson4Page extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<AndreevAlekseiLesson4Page> createState() =>
-      _AndreevAlekseiLesson4PageState();
+  State<AndreevAlekseiLesson4Page> createState() => _AndreevAlekseiLesson4PageState();
 }
 
 class _AndreevAlekseiLesson4PageState extends State<AndreevAlekseiLesson4Page> {
@@ -42,8 +41,7 @@ class _AndreevAlekseiLesson4PageState extends State<AndreevAlekseiLesson4Page> {
                 hintText: 'print some letters here',
               ),
               onChanged: (text) {
-                textFieldController3.text =
-                '${textFieldController1.text} ${textFieldController2.text}';
+                textFieldController3.text = '${textFieldController1.text} ${textFieldController2.text}';
               },
             ),
             TextField(
@@ -55,8 +53,7 @@ class _AndreevAlekseiLesson4PageState extends State<AndreevAlekseiLesson4Page> {
                 hintText: 'and here too!',
               ),
               onChanged: (text) {
-                textFieldController3.text =
-                '${textFieldController1.text} ${textFieldController2.text}';
+                textFieldController3.text = '${textFieldController1.text} ${textFieldController2.text}';
               },
             ),
             const SizedBox(
@@ -85,8 +82,7 @@ class _AndreevAlekseiLesson4PageState extends State<AndreevAlekseiLesson4Page> {
 
 class NoSpacesTextInputFormatter extends TextInputFormatter {
   @override
-  TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
+  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
     final newText = newValue.text;
     if (RegExp(r'\s').hasMatch(newText)) {
       return oldValue;
@@ -97,13 +93,11 @@ class NoSpacesTextInputFormatter extends TextInputFormatter {
 
 class SpaceProtectorInputFormatter extends TextInputFormatter {
   @override
-  TextEditingValue formatEditUpdate(
-      TextEditingValue oldValue, TextEditingValue newValue) {
+  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
     final newText = newValue.text;
     if (RegExp(r'\s').allMatches(newText).length != 1) {
       return oldValue;
-    }
-    else{
+    } else {
       return newValue.copyWith(text: newText);
     }
   }
@@ -117,6 +111,6 @@ String currentTextReturner1(String text) {
 
 String currentTextReturner2(String text) {
   final spacePosition = text.indexOf(RegExp(r'\s'));
-  final currentText = text.substring(spacePosition+1);
+  final currentText = text.substring(spacePosition + 1);
   return currentText;
 }
