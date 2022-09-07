@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class BlackWidget extends StatelessWidget {
   const BlackWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class BlackWidget extends StatelessWidget {
       width: 80,
       height: 80,
       color: Colors.black,
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: const EdgeInsets.all(10),
     );
   }
 }

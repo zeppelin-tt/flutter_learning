@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class GreenShadowedWidget extends StatelessWidget {
   const GreenShadowedWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class GreenShadowedWidget extends StatelessWidget {
         color: Colors.green,
         boxShadow: [BoxShadow(color: Colors.green, blurRadius: 25, offset: Offset(10, 10))],
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: const EdgeInsets.all(10),
     );
   }
 }

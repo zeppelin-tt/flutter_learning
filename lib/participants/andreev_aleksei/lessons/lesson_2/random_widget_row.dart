@@ -9,8 +9,6 @@ import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_2/y
 class RandomWidgetRow extends StatelessWidget {
   final int quantityOfWidgets;
 
-  RandomWidgetRow(this.quantityOfWidgets, {Key? key}) : super(key: key);
-
   final List<Widget> widgets = [
     const YellowWidget(),
     const BlackWidget(),
@@ -18,6 +16,8 @@ class RandomWidgetRow extends StatelessWidget {
     const RedWidget(),
     const GreenShadowedWidget(),
   ];
+
+  RandomWidgetRow(this.quantityOfWidgets, {super.key});
 
   @override
   Widget build(BuildContext context) {

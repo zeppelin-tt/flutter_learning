@@ -7,10 +7,10 @@ class ColumnOfRandomWidgetRows extends StatelessWidget {
     RandomWidgetRow(3),
   ];
 
-  ColumnOfRandomWidgetRows(this.quantityOfRows, {Key? key}) : super(key: key);
+  ColumnOfRandomWidgetRows(this.quantityOfRows, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: List.generate(quantityOfRows, (index) => rows[0]));
+    return Column(children: List.generate(quantityOfRows, (index) => rows.first));
   }
 }
