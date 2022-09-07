@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
-
-import 'lessons/lesson_2/andreev_aleksei_lesson_2_page.dart';
+import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_2/andreev_aleksei_lesson_2_page.dart';
 
 class AndreevAlekseiPage extends StatelessWidget {
   const AndreevAlekseiPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +20,8 @@ class AndreevAlekseiPage extends StatelessWidget {
             children: [
               AppButton(
                 text: 'Lesson 2',
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                onPressed: () async {
+                  await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                     return const AndreevAlekseiLesson2Page();
                   }));
                 },
