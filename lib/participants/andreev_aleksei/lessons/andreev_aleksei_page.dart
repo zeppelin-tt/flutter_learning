@@ -4,8 +4,8 @@ import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_4/a
 
 class AndreevAlekseiPage extends StatelessWidget {
   const AndreevAlekseiPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,8 @@ class AndreevAlekseiPage extends StatelessWidget {
             children: [
               AppButton(
                 text: 'Lesson 4',
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                onPressed: () async {
+                  await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                     return const AndreevAlekseiLesson4Page();
                   }));
                 },
