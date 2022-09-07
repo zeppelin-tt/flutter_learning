@@ -3,8 +3,8 @@ import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_0
 
 class SchennikovMaksimLesson9Page extends StatelessWidget {
   const SchennikovMaksimLesson9Page({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -6,8 +6,8 @@ class AnimatedRectLesson9 extends AnimatedWidget {
   const AnimatedRectLesson9({
     required AnimationController controller,
     required this.maxValue,
-    Key? key,
-  }) : super(listenable: controller, key: key);
+    super.key,
+  }) : super(listenable: controller);
 
   Animation<double> get radius => listenable as Animation<double>;
 

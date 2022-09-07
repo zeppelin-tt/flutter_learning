@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/animated_rect_depend_on_inhereted.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/animated_rect_depend_on_inherited.dart';
 import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_05/inherited_data_provider.dart';
 
 class SetStateExample extends StatefulWidget {
   const SetStateExample({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<SetStateExample> createState() => _SetStateExampleState();

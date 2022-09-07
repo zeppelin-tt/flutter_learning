@@ -7,8 +7,8 @@ class AnimatedRect extends StatelessWidget {
   const AnimatedRect({
     required this.isOval,
     this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class AnimatedRect extends StatelessWidget {
         height: isOval ? 300 : 200,
         width: isOval ? 200 : 300,
         decoration: BoxDecoration(
-          borderRadius: isOval ? BorderRadius.circular(200) : BorderRadius.zero,
+          borderRadius: isOval ? const BorderRadius.all(Radius.circular(200)) : BorderRadius.zero,
           color: isOval ? Colors.red : Colors.blue,
         ),
         child: const Center(

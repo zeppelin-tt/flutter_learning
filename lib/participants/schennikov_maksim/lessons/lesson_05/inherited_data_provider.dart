@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 class InheritedDataProvider extends InheritedWidget {
-  final bool isOval;
-
-  const InheritedDataProvider({
-    required Widget child,
-    required this.isOval,
-    Key? key,
-  }) : super(key: key, child: child);
-
   static InheritedDataProvider? of(BuildContext context) {
     return context.dependOnInheritedWidgetOfExactType<InheritedDataProvider>();
   }
+
+  final bool isOval;
+
+  const InheritedDataProvider({
+    required super.child,
+    required this.isOval,
+    super.key,
+  });
 
   @override
   bool updateShouldNotify(InheritedDataProvider oldWidget) => isOval != oldWidget.isOval;

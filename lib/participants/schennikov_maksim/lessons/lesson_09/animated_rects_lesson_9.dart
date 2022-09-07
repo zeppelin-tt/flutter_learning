@@ -12,8 +12,8 @@ class AnimatedRectsLesson9 extends AnimatedWidget {
     required this.maxRadius,
     required this.radius,
     required this.rectSize,
-    Key? key,
-  }) : super(listenable: controller, key: key);
+    super.key,
+  }) : super(listenable: controller);
 
   Animation<double> get animation => listenable as Animation<double>;
 

@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SchennikovMaksimLesson7Page extends StatefulWidget {
   const SchennikovMaksimLesson7Page({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<SchennikovMaksimLesson7Page> createState() => _SchennikovMaksimLesson7PageState();
@@ -104,10 +104,7 @@ class _SchennikovMaksimLesson7PageState extends State<SchennikovMaksimLesson7Pag
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        circleButtonOffset = Offset(
-                          rnd.nextDouble() * 1.sw - 30,
-                          rnd.nextDouble() * 1.sh - 30,
-                        );
+                        circleButtonOffset = Offset(rnd.nextDouble() * 1.sw - 30, rnd.nextDouble() * 1.sh - 30);
                       });
                     },
                     child: ClipOval(

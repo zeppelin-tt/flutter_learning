@@ -1,27 +1,24 @@
-
 import 'package:flutter/material.dart';
 
-enum Shapes { top, bottom }
-
 class InheritedDataModel extends InheritedModel<Shapes> {
-  final bool isOvalTop;
-  final bool isOvalBottom;
-
-  const InheritedDataModel({
-    required Widget child,
-    required this.isOvalTop,
-    required this.isOvalBottom,
-    Key? key,
-  }) : super(key: key, child: child);
-
   static InheritedDataModel? of(BuildContext context, Shapes aspect) {
     return InheritedModel.inheritFrom<InheritedDataModel>(context, aspect: aspect);
   }
 
+  final bool isOvalTop;
+  final bool isOvalBottom;
+
+  const InheritedDataModel({
+    required super.child,
+    required this.isOvalTop,
+    required this.isOvalBottom,
+    super.key,
+  });
+
   @override
   bool updateShouldNotifyDependent(InheritedDataModel oldWidget, Set<Shapes> dependencies) {
-    final isTopUpdated =  isOvalTop != oldWidget.isOvalTop && dependencies.contains(Shapes.top);
-    final isBottomUpdated =  isOvalBottom != oldWidget.isOvalBottom && dependencies.contains(Shapes.bottom);
+    final isTopUpdated = isOvalTop != oldWidget.isOvalTop && dependencies.contains(Shapes.top);
+    final isBottomUpdated = isOvalBottom != oldWidget.isOvalBottom && dependencies.contains(Shapes.bottom);
     return isTopUpdated || isBottomUpdated;
   }
 
@@ -30,3 +27,5 @@ class InheritedDataModel extends InheritedModel<Shapes> {
     return isOvalTop != oldWidget.isOvalTop || isOvalBottom != oldWidget.isOvalBottom;
   }
 }
+
+enum Shapes { top, bottom }
