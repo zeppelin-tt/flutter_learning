@@ -23,8 +23,7 @@ class RandomWidgetRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: List.generate(quantityOfWidgets,
-          (index) => widgets[Random().nextInt(widgets.length)]),
+      children: List.generate(quantityOfWidgets, (index) => widgets[Random().nextInt(widgets.length)]),
     );
   }
 }

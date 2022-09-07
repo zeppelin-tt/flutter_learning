@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RedWidget extends StatelessWidget {
@@ -9,11 +8,7 @@ class RedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipOval(
-      child: Container(
-        width: 80,
-        height: 80,
-        color: Colors.red,
-      ),
+      child: Container(width: 80, height: 80, color: Colors.red),
     );
   }
 }

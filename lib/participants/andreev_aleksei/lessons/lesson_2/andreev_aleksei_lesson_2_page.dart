@@ -9,11 +9,6 @@ class AndreevAlekseiLesson2Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Material(
-      color: Colors.white,
-      child: SingleChildScrollView(
-        child: ColumnOfRandomWidgetRows(20),
-      ),
-    ));
+        child: Material(color: Colors.white, child: SingleChildScrollView(child: ColumnOfRandomWidgetRows(20))));
   }
 }

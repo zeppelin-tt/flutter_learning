@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class GreenShadowedWidget extends StatelessWidget {
@@ -13,10 +12,7 @@ class GreenShadowedWidget extends StatelessWidget {
       height: 100,
       decoration: const BoxDecoration(
         color: Colors.green,
-        boxShadow: [
-          BoxShadow(
-              color: Colors.green, blurRadius: 25, offset: Offset(10, 10)),
-        ],
+        boxShadow: [BoxShadow(color: Colors.green, blurRadius: 25, offset: Offset(10, 10))],
       ),
       margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
     );
