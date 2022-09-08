@@ -1,19 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/andreev_aleksei_lesson_7_page.dart';
 import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/animated_dot.dart';
+import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/button_page.dart';
 import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/keyboard.dart';
 import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/pin_code_provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-class CheckPinCodePage extends StatelessWidget {
+class CheckPinCodePage extends StatefulWidget {
   const CheckPinCodePage({
     super.key,
   });
 
   @override
+  State<CheckPinCodePage> createState() => _CheckPinCodePageState();
+}
+
+class _CheckPinCodePageState extends State<CheckPinCodePage> {
+  @override
   Widget build(BuildContext context) {
-    final pinCodeProvider = context.watch<PinCodeProvider>()
-    ..isCheckingPage = true;
+    final pinCodeProvider = context.watch<PinCodeProvider>();
 
     return WillPopScope(
       onWillPop: () async => false,
@@ -39,27 +45,24 @@ class CheckPinCodePage extends StatelessWidget {
                 children: [
                   AnimatedDot(
                     position: 1,
-                    isCheckingPage: true,
                     color: pinCodeProvider.color_1,
                     borderColor: pinCodeProvider.borderColor_1,
                   ),
                   AnimatedDot(
                     position: 2,
-                    isCheckingPage: true,
                     color: pinCodeProvider.color_2,
                     borderColor: pinCodeProvider.borderColor_2,
                   ),
                   AnimatedDot(
                     position: 3,
-                    isCheckingPage: true,
                     color: pinCodeProvider.color_3,
                     borderColor: pinCodeProvider.borderColor_3,
                   ),
                   AnimatedDot(
                     position: 4,
-                    isCheckingPage: true,
                     color: pinCodeProvider.color_4,
                     borderColor: pinCodeProvider.borderColor_4,
+                    onEnd: fourthDotBehavior,
                   ),
                 ],
               ),
@@ -68,7 +71,7 @@ class CheckPinCodePage extends StatelessWidget {
               width: 0.4.sh,
               height: 0.1.sw,
               child: Text(
-                pinCodeProvider.error,
+                '${pinCodeProvider.inputNumber}, ${pinCodeProvider.pinCode} \n ${pinCodeProvider.error}',
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.red,
@@ -80,5 +83,28 @@ class CheckPinCodePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> fourthDotBehavior() async {
+    final pinCodeProvider = context.read<PinCodeProvider>();
+    if (pinCodeProvider.inputNumber == pinCodeProvider.pinCode) {
+      pinCodeProvider..clear()
+      ..newPinCode();
+      await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+        return const AndreevAlekseiLesson7Page();
+      }));
+    }
+
+    else{
+      if(pinCodeProvider.inputNumber.length == 4) {
+        pinCodeProvider.pinCodeError();
+        if (pinCodeProvider.attemptsQuantity == 0){
+          await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+            return const ButtonPage();
+          }));
+        }
+      }
+
+    }
   }
 }

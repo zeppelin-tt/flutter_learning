@@ -1,22 +1,13 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/andreev_aleksei_lesson_7_page.dart';
-import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/button_page.dart';
-import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/pin_code_provider.dart';
-import 'package:provider/provider.dart';
 
 class AnimatedDot extends StatelessWidget {
   final Color color;
-  final bool isCheckingPage;
   final Color borderColor;
   final int position;
   final VoidCallback? onEnd;
 
-
   const AnimatedDot({
     required this.position,
-    required this.isCheckingPage,
     required this.color,
     required this.borderColor,
     super.key,
@@ -25,8 +16,6 @@ class AnimatedDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pinCodeProvider = context.watch<PinCodeProvider>();
-
     return Material(
       color: Colors.white,
       child: AnimatedContainer(
@@ -38,57 +27,8 @@ class AnimatedDot extends StatelessWidget {
           color: color,
           border: Border.all(color: borderColor),
         ),
-        onEnd: () {},
+        onEnd: onEnd,
       ),
     );
-
-
   }
-
-  void finalDot (){
-    if (position == 4 && pinCodeProvider.pinCode.length == 4 && !pinCodeProvider.isCheckingPage) {
-      pinCodeProvider.dotsCleaning();
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        return const ButtonPage();
-      }));
-    }
 }
-
-/*
-
-if (position == 4 &&
-              pinCodeProvider.inputNumber.length == 4 &&
-              pinCodeProvider.inputNumber == pinCodeProvider.pinCode &&
-              pinCodeProvider.isCheckingPage) {
-            pinCodeProvider.dotsCleaning();
-            pinCodeProvider.newPinCode();
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-              return const AndreevAlekseiLesson7Page();
-            }));
-          }if (position == 4 &&
-pinCodeProvider.inputNumber.length == 4 &&
-pinCodeProvider.inputNumber == pinCodeProvider.pinCode &&
-pinCodeProvider.isCheckingPage) {
-pinCodeProvider.dotsCleaning();
-pinCodeProvider.newPinCode();
-Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-return const AndreevAlekseiLesson7Page();
-}));
-}
-if (position == 4 &&
-pinCodeProvider.inputNumber.length == 4 &&
-pinCodeProvider.isCheckingPage &&
-!pinCodeProvider.isCorrectPinCode &&
-pinCodeProvider.attemptsQuantity != 0) {
-pinCodeProvider.pinCodeCheckingError();
-}
-if (position == 4 &&
-pinCodeProvider.inputNumber.length == 4 &&
-pinCodeProvider.isCheckingPage &&
-!pinCodeProvider.isCorrectPinCode &&
-pinCodeProvider.attemptsQuantity == 0) {
-pinCodeProvider.anotherAttempt();
-Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-return const ButtonPage();
-}));
-} */

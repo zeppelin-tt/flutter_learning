@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class PinCodeProvider extends ChangeNotifier {
-
   int attemptsQuantity = 3;
 
   String inputNumber = '';
@@ -17,8 +16,6 @@ class PinCodeProvider extends ChangeNotifier {
   Color borderColor_2 = Colors.black;
   Color borderColor_3 = Colors.black;
   Color borderColor_4 = Colors.black;
-
-  bool isCheckingPage = false;
 
   void receivingDigit(String digit) {
     if (inputNumber.isEmpty) {
@@ -40,6 +37,7 @@ class PinCodeProvider extends ChangeNotifier {
   }
 
   void receivingFirstDigit(String digit) {
+    dotsCleaning();
     error = '';
     inputNumber = digit;
     color_1 = Colors.black;
@@ -59,24 +57,30 @@ class PinCodeProvider extends ChangeNotifier {
   }
 
   void receivingFourthDigit(String digit) {
-    if (!isCheckingPage) {
+    if (pinCode != '') {
+      inputNumber = inputNumber + digit;
+      color_4 = Colors.black;
+      notifyListeners();
+    }
+    else {
       inputNumber = inputNumber + digit;
       pinCode = inputNumber;
       inputNumber = '';
       color_4 = Colors.black;
       notifyListeners();
     }
-    else {
-      inputNumber = inputNumber + digit;
-      color_4 = Colors.black;
-      notifyListeners();
-    }
+
   }
 
   void clear() {
     inputNumber = '';
     dotsCleaning();
     notifyListeners();
+  }
+
+  void newPinCode(){
+    pinCode = '';
+    clear();
   }
 
   void dotsCleaning() {
@@ -89,5 +93,25 @@ class PinCodeProvider extends ChangeNotifier {
     borderColor_2 = Colors.black;
     borderColor_3 = Colors.black;
     borderColor_4 = Colors.black;
+  }
+
+  void errorDots(){
+    color_1 = Colors.red;
+    color_2 = Colors.red;
+    color_3 = Colors.red;
+    color_4 = Colors.red;
+
+    borderColor_1 = Colors.red;
+    borderColor_2 = Colors.red;
+    borderColor_3 = Colors.red;
+    borderColor_4 = Colors.red;
+  }
+
+  void pinCodeError(){
+    attemptsQuantity--;
+    error = 'Неправильный пин-код \n Осталось попыток: $attemptsQuantity';
+    errorDots();
+    inputNumber = '';
+    notifyListeners();
   }
 }
