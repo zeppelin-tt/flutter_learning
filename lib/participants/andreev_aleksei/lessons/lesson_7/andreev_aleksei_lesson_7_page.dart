@@ -18,7 +18,8 @@ class AndreevAlekseiLesson7Page extends StatefulWidget {
 class _AndreevAlekseiLesson7PageState extends State<AndreevAlekseiLesson7Page> {
   @override
   Widget build(BuildContext context) {
-    final pinCodeProvider = context.watch<PinCodeProvider>();
+    final pinCodeProvider = context.watch<PinCodeProvider>()
+    ..isCheckingPage = false;
 
     return WillPopScope(
       onWillPop: () async => false,

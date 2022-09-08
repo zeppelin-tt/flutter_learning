@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
 class PinCodeProvider extends ChangeNotifier {
-  bool pinCodeReceived = false;
-  bool isCorrectPinCode = false;
-  bool pinCodeChecked = false;
-  bool isNewAttempt = false;
 
   int attemptsQuantity = 3;
 
@@ -44,12 +40,7 @@ class PinCodeProvider extends ChangeNotifier {
   }
 
   void receivingFirstDigit(String digit) {
-    if (isNewAttempt) {
-      clear();
-      pinCodeChecked = false;
-      error = '';
-      notifyListeners();
-    }
+    error = '';
     inputNumber = digit;
     color_1 = Colors.black;
     notifyListeners();
@@ -68,14 +59,18 @@ class PinCodeProvider extends ChangeNotifier {
   }
 
   void receivingFourthDigit(String digit) {
-    inputNumber = inputNumber + digit;
-    pinCode = inputNumber;
-    inputNumber = '';
-    color_4 = Colors.black;
-    if (pinCode != '') {
-      checkingPinCode();
+    if (!isCheckingPage) {
+      inputNumber = inputNumber + digit;
+      pinCode = inputNumber;
+      inputNumber = '';
+      color_4 = Colors.black;
+      notifyListeners();
     }
-    notifyListeners();
+    else {
+      inputNumber = inputNumber + digit;
+      color_4 = Colors.black;
+      notifyListeners();
+    }
   }
 
   void clear() {
@@ -84,43 +79,7 @@ class PinCodeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void checkingPinCode() {
-    pinCodeChecked = true;
-    if (inputNumber == pinCode) {
-      isCorrectPinCode = true;
-    } else {
-      isCorrectPinCode = false;
-    }
-    notifyListeners();
-  }
-
-  void pinCodeCheckingError() {
-    attemptsQuantity--;
-    error = 'Неверный пин-код \n Осталось  попыток: $attemptsQuantity';
-    inputNumber = '';
-    isNewAttempt = true;
-    notifyListeners();
-  }
-
-  void newPinCode() {
-    pinCodeReceived = false;
-    isCorrectPinCode = false;
-    pinCodeChecked = false;
-    isNewAttempt = false;
-    attemptsQuantity = 3;
-    inputNumber = '';
-    pinCode = '';
-    error = '';
-  }
-
-  void anotherAttempt() {
-    attemptsQuantity = 3;
-    error = '';
-    pinCodeChecked = false;
-    clear();
-  }
-
-  void dotsCleaning(){
+  void dotsCleaning() {
     color_1 = Colors.white;
     color_2 = Colors.white;
     color_3 = Colors.white;
