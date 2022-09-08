@@ -62,7 +62,7 @@ class _CheckPinCodePageState extends State<CheckPinCodePage> {
                     position: 4,
                     color: pinCodeProvider.color_4,
                     borderColor: pinCodeProvider.borderColor_4,
-                    onEnd: fourthDotBehavior,
+                    onEnd: fourthDotBehaviorOnCheckPage,
                   ),
                 ],
               ),
@@ -85,7 +85,7 @@ class _CheckPinCodePageState extends State<CheckPinCodePage> {
     );
   }
 
-  Future<void> fourthDotBehavior() async {
+  Future<void> fourthDotBehaviorOnCheckPage() async {
     final pinCodeProvider = context.read<PinCodeProvider>();
     if (pinCodeProvider.inputNumber == pinCodeProvider.pinCode) {
       pinCodeProvider..clear()
