@@ -44,19 +44,27 @@ class _AndreevAlekseiLesson7PageState extends State<AndreevAlekseiLesson7Page> {
                 children: [
                   AnimatedDot(
                     position: 1,
-                    isCheckingPage: false,
+                    isCheckingPage: pinCodeProvider.isCheckingPage,
+                    color: pinCodeProvider.color_1,
+                    borderColor: pinCodeProvider.borderColor_1,
                   ),
                   AnimatedDot(
                     position: 2,
-                    isCheckingPage: false,
+                    isCheckingPage: pinCodeProvider.isCheckingPage,
+                    color: pinCodeProvider.color_2,
+                    borderColor: pinCodeProvider.borderColor_2,
                   ),
                   AnimatedDot(
                     position: 3,
-                    isCheckingPage: false,
+                    isCheckingPage: pinCodeProvider.isCheckingPage,
+                    color: pinCodeProvider.color_3,
+                    borderColor: pinCodeProvider.borderColor_3,
                   ),
                   AnimatedDot(
                     position: 4,
-                    isCheckingPage: false,
+                    isCheckingPage: pinCodeProvider.isCheckingPage,
+                    color: pinCodeProvider.color_4,
+                    borderColor: pinCodeProvider.borderColor_4,
                   ),
                 ],
               ),

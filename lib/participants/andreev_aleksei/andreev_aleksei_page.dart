@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
 
-import 'lessons/lesson_7/andreev_aleksei_lesson_7_page.dart';
+import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/andreev_aleksei_lesson_7_page.dart';
 
 class AndreevAlekseiPage extends StatelessWidget {
   const AndreevAlekseiPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class AndreevAlekseiPage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context)
                       .push(MaterialPageRoute(builder: (context) {
-                    return AndreevAlekseiLesson7Page();
+                    return const AndreevAlekseiLesson7Page();
                   }));
                 },
                 width: buttonWidth,

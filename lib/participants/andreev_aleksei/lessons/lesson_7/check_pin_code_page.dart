@@ -12,7 +12,8 @@ class CheckPinCodePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pinCodeProvider = context.watch<PinCodeProvider>();
+    final pinCodeProvider = context.watch<PinCodeProvider>()
+    ..isCheckingPage = true;
 
     return WillPopScope(
       onWillPop: () async => false,
@@ -36,10 +37,30 @@ class CheckPinCodePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  AnimatedDot(position: 1, isCheckingPage: true),
-                  AnimatedDot(position: 2, isCheckingPage: true),
-                  AnimatedDot(position: 3, isCheckingPage: true),
-                  AnimatedDot(position: 4, isCheckingPage: true),
+                  AnimatedDot(
+                    position: 1,
+                    isCheckingPage: true,
+                    color: pinCodeProvider.color_1,
+                    borderColor: pinCodeProvider.borderColor_1,
+                  ),
+                  AnimatedDot(
+                    position: 2,
+                    isCheckingPage: true,
+                    color: pinCodeProvider.color_2,
+                    borderColor: pinCodeProvider.borderColor_2,
+                  ),
+                  AnimatedDot(
+                    position: 3,
+                    isCheckingPage: true,
+                    color: pinCodeProvider.color_3,
+                    borderColor: pinCodeProvider.borderColor_3,
+                  ),
+                  AnimatedDot(
+                    position: 4,
+                    isCheckingPage: true,
+                    color: pinCodeProvider.color_4,
+                    borderColor: pinCodeProvider.borderColor_4,
+                  ),
                 ],
               ),
             ),
