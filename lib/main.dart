@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'main_page.dart';
 import 'participants/schennikov_maksim/lessons/lesson_10/schennikov_maksim_lesson_10_page.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, snapshot) {
         return const MaterialApp(
-          home: SchennikovMaksimLesson10Page(),
+          home: MainPage(),
         );
       },
     );
