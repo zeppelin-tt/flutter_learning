@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_learning/participants/trachuk_vladyslav/lesson_2/random_row.dart';
 
 class ColumnWithRandomRow extends StatelessWidget {
-  final List<Widget> rows = [
-    WidgetsRow(),
-  ];
+  final List<Widget> rows;
 
-  ColumnWithRandomRow({Key? key}) : super(key: key);
+  const ColumnWithRandomRow({
+    required this.rows,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

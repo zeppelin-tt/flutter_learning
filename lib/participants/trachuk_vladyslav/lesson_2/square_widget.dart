@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
 class SquareWidget extends StatelessWidget {
-  const SquareWidget({Key? key}) : super(key: key);
+  const SquareWidget({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +14,10 @@ class SquareWidget extends StatelessWidget {
         color: const Color(0xff0DBDB2),
         borderRadius: BorderRadius.circular(20),
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin: const EdgeInsets.symmetric(
+        horizontal: 10,
+        vertical: 10,
+      ),
     );
   }
 }

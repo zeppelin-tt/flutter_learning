@@ -8,7 +8,9 @@ import 'package:flutter_learning/participants/trachuk_vladyslav/lesson_2/square_
 import 'package:flutter_learning/participants/trachuk_vladyslav/lesson_2/square_widget.dart';
 
 class WidgetsRow extends StatelessWidget {
-  WidgetsRow({Key? key}) : super(key: key);
+  WidgetsRow({
+    Key? key,
+  }) : super(key: key);
 
   final List<Widget> listOfWidgets = [
     const CircleWidget(),

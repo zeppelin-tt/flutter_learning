@@ -8,8 +8,14 @@ class CircleWidget extends StatelessWidget {
     return Container(
       width: 112,
       height: 100,
-      decoration: BoxDecoration(color: const Color(0xffBA55D3), borderRadius: BorderRadius.circular(50)),
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      decoration: BoxDecoration(
+        color: const Color(0xffBA55D3),
+        borderRadius: BorderRadius.circular(50),
+      ),
+      margin: const EdgeInsets.symmetric(
+        horizontal: 10,
+        vertical: 10,
+      ),
     );
   }
 }
