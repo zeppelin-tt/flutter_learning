@@ -2,15 +2,15 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const Main());
+  runApp(const Lesson2());
 }
 
 final columnList = <Widget>[];
 
 late double _maxWidth;
 
-class Main extends StatelessWidget {
-  const Main({super.key});
+class Lesson2 extends StatelessWidget {
+  const Lesson2({super.key});
 
   @override
   Widget build(BuildContext context) {
