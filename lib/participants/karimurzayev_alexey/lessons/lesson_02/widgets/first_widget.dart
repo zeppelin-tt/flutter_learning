@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class FirstWidget extends StatelessWidget {
   const FirstWidget({super.key});
 
@@ -14,8 +13,10 @@ class FirstWidget extends StatelessWidget {
       ),
       width: size.width / 4,
       height: size.width / 4,
-      child: const Icon(Icons.ice_skating),
+      child: const Icon(
+        Icons.ice_skating,
+        size: 35,
+      ),
     );
   }
 }
-

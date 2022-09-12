@@ -13,7 +13,10 @@ class SecondWidget extends StatelessWidget {
       ),
       width: size.width / 4,
       height: size.width / 4,
-      child: const Icon(Icons.adb),
+      child: const Icon(
+        Icons.adb,
+        size: 35,
+      ),
     );
   }
 }
