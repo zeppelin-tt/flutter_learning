@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
-import 'package:flutter_learning/participants/karimurzayev_alexey/karimurzaye_alexey_page.dart';
+import 'package:flutter_learning/participants/karimurzayev_alexey/karimurzayev_alexey_page.dart';
 import 'package:flutter_learning/participants/schennikov_maksim/schennikov_maksim_page.dart';
 
 class MainPage extends StatelessWidget {
