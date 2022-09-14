@@ -4,21 +4,19 @@ import 'package:flutter_learning/participants/karimurzayev_alexey/lessons/lesson
 class KeyboardButton extends StatelessWidget {
   final String text;
   final Color color;
-  const KeyboardButton({super.key, required this.text, this.color = MyColors.colorDigit});
+  final VoidCallback buttonClick;
+
+  const KeyboardButton({super.key, required this.text, this.color = MyColors.colorDigit, required this.buttonClick});
 
   @override
   Widget build(BuildContext context) {
-
-
     return DecoratedBox(
       decoration: const BoxDecoration(
         color: Color(0xFF4E5967),
         borderRadius: BorderRadius.all(Radius.circular(11)),
       ),
       child: TextButton(
-        onPressed: () {
-          buttonClick(text);
-        },
+        onPressed: buttonClick,
         style: const ButtonStyle(),
         child: Text(
           text,
@@ -31,8 +29,4 @@ class KeyboardButton extends StatelessWidget {
       ),
     );
   }
-}
-
-void buttonClick(String buttonText) {
-
 }
