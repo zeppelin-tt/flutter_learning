@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
 
-import 'lessons/lesson_02/karimurzayev_alexey_lesson_2_page.dart';
-
+import 'package:flutter_learning/participants/karimurzayev_alexey/lessons/lesson_02/karimurzayev_alexey_lesson_2_page.dart';
+import 'package:flutter_learning/participants/karimurzayev_alexey/lessons/lesson_04/karimurzayev_alexey_lesson_4_page.dart';
 
 class KarimurzayevAlexeyPage extends StatelessWidget {
   const KarimurzayevAlexeyPage({
@@ -27,6 +27,12 @@ class KarimurzayevAlexeyPage extends StatelessWidget {
               AppButton(
                 text: 'Lesson 2',
                 onPressed: () => goTo(const KarimurzayevAlexeyLesson2Page()),
+                width: buttonWidth,
+                backgroundColor: const Color(0xFFB1CDCD),
+              ),
+              AppButton(
+                text: 'Lesson 4',
+                onPressed: () => goTo(const KarimurzayevAlexeyLesson4Page()),
                 width: buttonWidth,
                 backgroundColor: const Color(0xFFB1CDCD),
               ),
