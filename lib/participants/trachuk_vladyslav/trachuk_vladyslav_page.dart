@@ -20,12 +20,6 @@ class TrachukVladyslavPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: (screenWidth - buttonWidth) / 2),
             children: [
               AppButton(
-                text: 'Lesson 2',
-                onPressed: () {},
-                width: buttonWidth,
-                backgroundColor: const Color(0xFFB1CDCD),
-              ),
-              AppButton(
                   text: 'Lesson 3',
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
