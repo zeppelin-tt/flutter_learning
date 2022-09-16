@@ -22,7 +22,7 @@ class _KarimurzayevAlexeyLesson4PageState extends State<KarimurzayevAlexeyLesson
     focusedBorder: OutlineInputBorder(
       borderSide: BorderSide(width: 2, color: Color(0xff9380ec)),
     ),
-  ); // Цвет бордера при фокусе.
+  );
 
   final textFieldStyleTwo = const InputDecoration(
     labelText: 'SECOND Text',
@@ -51,7 +51,7 @@ class _KarimurzayevAlexeyLesson4PageState extends State<KarimurzayevAlexeyLesson
     ),
   );
 
-  final denySpace = <TextInputFormatter>[FilteringTextInputFormatter.deny(RegExp(r'[\s]'))];
+  final denySpace = <TextInputFormatter>[FilteringTextInputFormatter.deny(RegExp(r'\s'))];
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +62,7 @@ class _KarimurzayevAlexeyLesson4PageState extends State<KarimurzayevAlexeyLesson
         child: Column(
           children: [
             TextField(
+              // onChanged: ,
               inputFormatters: denySpace,
               style: const TextStyle(color: Colors.white),
               decoration: textFieldStyleOne,
