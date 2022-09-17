@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
 
-import 'lessons/lesson_6/andreev_aleksei_lesson_6_page.dart';
+import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_6/andreev_aleksei_lesson_6_page.dart';
 
 
 class AndreevAlekseiPage extends StatelessWidget {
   const AndreevAlekseiPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
