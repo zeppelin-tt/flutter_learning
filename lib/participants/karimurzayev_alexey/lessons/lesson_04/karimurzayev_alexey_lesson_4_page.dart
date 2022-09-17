@@ -14,6 +14,8 @@ class KarimurzayevAlexeyLesson4Page extends StatefulWidget {
 
 class _KarimurzayevAlexeyLesson4PageState extends State<KarimurzayevAlexeyLesson4Page> {
   final textFieldStyleOne = const InputDecoration(
+    labelText: 'First Text',
+    labelStyle: TextStyle(fontSize: 18, color: Color(0xff9380ec), fontWeight: FontWeight.w500),
     hintText: 'First Text',
     hintStyle: TextStyle(color: Colors.yellowAccent),
     enabledBorder: OutlineInputBorder(
@@ -51,7 +53,12 @@ class _KarimurzayevAlexeyLesson4PageState extends State<KarimurzayevAlexeyLesson
     ),
   );
 
-  final denySpace = <TextInputFormatter>[FilteringTextInputFormatter.deny(RegExp(r'\s'))];
+  final denySpace = <TextInputFormatter>[
+    FilteringTextInputFormatter.deny(RegExp(r'\s')),
+  ]; // Запретил пробел, можно использовать например при валидации и тд.
+  final textController1 = TextEditingController();
+  final textController2 = TextEditingController();
+  final textController3 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +69,11 @@ class _KarimurzayevAlexeyLesson4PageState extends State<KarimurzayevAlexeyLesson
         child: Column(
           children: [
             TextField(
-              // onChanged: ,
+              controller: textController1,
+              onChanged: (text) {
+                textController3.text = '${textController1.text} ${textController2.text}';
+              },
+              //maxLength: 8,
               inputFormatters: denySpace,
               style: const TextStyle(color: Colors.white),
               decoration: textFieldStyleOne,
@@ -71,6 +82,11 @@ class _KarimurzayevAlexeyLesson4PageState extends State<KarimurzayevAlexeyLesson
               height: 20,
             ),
             TextField(
+              controller: textController2,
+              onChanged: (text) {
+                textController3.text = '${textController1.text} ${textController2.text}';
+              },
+             // maxLength: 8,
               inputFormatters: denySpace,
               style: const TextStyle(color: Colors.white),
               decoration: textFieldStyleTwo,
@@ -78,17 +94,15 @@ class _KarimurzayevAlexeyLesson4PageState extends State<KarimurzayevAlexeyLesson
             const SizedBox(
               height: 20,
             ),
-            ElevatedButton(
-              onPressed: () {
-                print('test');
-              },
-              child: const Text('Push me!'),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
             TextField(
-              inputFormatters: denySpace,
+              controller: textController3,
+              onChanged: (text) {
+                textController3.text.length < 9
+                    ? textController1.text = textController3.text
+                    : textController2.text = textController3.text.substring(8);
+              },
+              //maxLength: 16,
+              inputFormatters: [WhiteSpaceManager()],
               textAlign: TextAlign.center,
               style: const TextStyle(color: Colors.white),
               decoration: textFieldStyleThree,
@@ -98,4 +112,17 @@ class _KarimurzayevAlexeyLesson4PageState extends State<KarimurzayevAlexeyLesson
       ),
     );
   }
+
+
 }
+
+class WhiteSpaceManager extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
+    final newText = newValue.text;
+    return RegExp(r'\s').allMatches(newText).length != 1 ? oldValue : newValue.copyWith(text: newText);
+  }
+}
+
+
+// Не пойму как автоматически добавить пробел в 3 поле, для логичного разделения текста для 1 и 2 полей
