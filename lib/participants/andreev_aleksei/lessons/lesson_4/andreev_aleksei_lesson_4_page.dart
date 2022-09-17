@@ -20,11 +20,12 @@ class _AndreevAlekseiLesson4PageState extends State<AndreevAlekseiLesson4Page> {
     return Material(
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 50),
+        padding: const EdgeInsets.all(50),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
+              keyboardType: TextInputType.multiline,
+              maxLines: 5,
               controller: textFieldController1,
               inputFormatters: [
                 NoSpacesTextInputFormatter(),
@@ -37,6 +38,8 @@ class _AndreevAlekseiLesson4PageState extends State<AndreevAlekseiLesson4Page> {
               },
             ),
             TextField(
+              keyboardType: TextInputType.multiline,
+              maxLines: 5,
               controller: textFieldController2,
               inputFormatters: [
                 NoSpacesTextInputFormatter(),
@@ -52,6 +55,8 @@ class _AndreevAlekseiLesson4PageState extends State<AndreevAlekseiLesson4Page> {
               height: 20,
             ),
             TextField(
+              keyboardType: TextInputType.multiline,
+              maxLines: 5,
               controller: textFieldController3,
               inputFormatters: [
                 SpaceProtectorInputFormatter(),
