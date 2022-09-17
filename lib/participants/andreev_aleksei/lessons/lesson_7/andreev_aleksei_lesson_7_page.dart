@@ -66,18 +66,13 @@ class _AndreevAlekseiLesson7PageState extends State<AndreevAlekseiLesson7Page> {
                 ],
               ),
             ),
-            SizedBox(
-              width: 0.4.sh,
-              height: 0.1.sw,
-              child: Text(
-                '${pinCodeProvider.inputNumber}, ${pinCodeProvider.pinCode} ',
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: Colors.red,
-                ),
-              ),
+            Keyboard(
+              valueChangedOnTap: (val) {pinCodeProvider.receivingDigit(val);},
+              onClean: () {
+                setState(pinCodeProvider.removingLastDigit);
+              },
+
             ),
-            const Keyboard(),
           ]),
         ),
       ),

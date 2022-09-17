@@ -61,26 +61,21 @@ class PinCodeProvider extends ChangeNotifier {
       inputNumber = inputNumber + digit;
       color_4 = Colors.black;
       notifyListeners();
-    }
-    else {
+    } else {
       inputNumber = inputNumber + digit;
       pinCode = inputNumber;
       inputNumber = '';
       color_4 = Colors.black;
       notifyListeners();
     }
-
   }
 
-  void clear() {
+  void newPinCode() {
+    pinCode = '';
     inputNumber = '';
+    attemptsQuantity = 3;
     dotsCleaning();
     notifyListeners();
-  }
-
-  void newPinCode(){
-    pinCode = '';
-    clear();
   }
 
   void dotsCleaning() {
@@ -95,7 +90,7 @@ class PinCodeProvider extends ChangeNotifier {
     borderColor_4 = Colors.black;
   }
 
-  void errorDots(){
+  void errorDots() {
     color_1 = Colors.red;
     color_2 = Colors.red;
     color_3 = Colors.red;
@@ -107,11 +102,25 @@ class PinCodeProvider extends ChangeNotifier {
     borderColor_4 = Colors.red;
   }
 
-  void pinCodeError(){
+  void pinCodeError() {
     attemptsQuantity--;
     error = 'Неправильный пин-код \n Осталось попыток: $attemptsQuantity';
     errorDots();
     inputNumber = '';
+    notifyListeners();
+  }
+
+  void removingLastDigit() {
+    inputNumber = inputNumber.substring(0, inputNumber.length - 1);
+    if (inputNumber.isEmpty) {
+      color_1 = Colors.white;
+    }
+    if (inputNumber.length == 1) {
+      color_2 = Colors.white;
+    }
+    if (inputNumber.length == 2){
+      color_3 = Colors.white;
+    }
     notifyListeners();
   }
 }

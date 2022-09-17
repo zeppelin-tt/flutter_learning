@@ -71,14 +71,20 @@ class _CheckPinCodePageState extends State<CheckPinCodePage> {
               width: 0.4.sh,
               height: 0.1.sw,
               child: Text(
-                '${pinCodeProvider.inputNumber}, ${pinCodeProvider.pinCode} \n ${pinCodeProvider.error}',
+                pinCodeProvider.error,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                   color: Colors.red,
                 ),
               ),
             ),
-            const Keyboard(),
+            Keyboard(
+              valueChangedOnTap: (val) {pinCodeProvider.receivingDigit(val);},
+              onClean: () {
+                setState(pinCodeProvider.removingLastDigit);
+              },
+
+            ),
           ]),
         ),
       ),
@@ -88,8 +94,7 @@ class _CheckPinCodePageState extends State<CheckPinCodePage> {
   Future<void> fourthDotBehaviorOnCheckPage() async {
     final pinCodeProvider = context.read<PinCodeProvider>();
     if (pinCodeProvider.inputNumber == pinCodeProvider.pinCode) {
-      pinCodeProvider..clear()
-      ..newPinCode();
+      pinCodeProvider.newPinCode();
       await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
         return const AndreevAlekseiLesson7Page();
       }));
@@ -99,6 +104,9 @@ class _CheckPinCodePageState extends State<CheckPinCodePage> {
       if(pinCodeProvider.inputNumber.length == 4) {
         pinCodeProvider.pinCodeError();
         if (pinCodeProvider.attemptsQuantity == 0){
+          pinCodeProvider..attemptsQuantity = 3
+          ..dotsCleaning()
+          ..error = '';
           await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
             return const ButtonPage();
           }));

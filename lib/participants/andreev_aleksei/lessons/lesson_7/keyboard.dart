@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/pin_code_provider.dart';
-import 'package:provider/provider.dart';
 
 class Keyboard extends StatelessWidget {
+  final Function(String) valueChangedOnTap;
+  final VoidCallback onClean;
+
   const Keyboard({
     super.key,
+    required this.valueChangedOnTap,
+    required this.onClean,
   });
 
   @override
   Widget build(BuildContext context) {
-    final pinCodeProvider = context.watch<PinCodeProvider>();
 
     return Expanded(
       child: GridView(
@@ -19,7 +21,7 @@ class Keyboard extends StatelessWidget {
         children: [
           TextButton(
             onPressed: () {
-              pinCodeProvider.receivingDigit('7');
+              valueChangedOnTap('7');
             },
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -31,7 +33,7 @@ class Keyboard extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              pinCodeProvider.receivingDigit('8');
+              valueChangedOnTap('8');
             },
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -43,7 +45,7 @@ class Keyboard extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              pinCodeProvider.receivingDigit('9');
+              valueChangedOnTap('9');
             },
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -55,7 +57,7 @@ class Keyboard extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              pinCodeProvider.receivingDigit('4');
+              valueChangedOnTap('4');
             },
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -67,7 +69,7 @@ class Keyboard extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              pinCodeProvider.receivingDigit('5');
+              valueChangedOnTap('5');
             },
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -79,7 +81,7 @@ class Keyboard extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              pinCodeProvider.receivingDigit('6');
+              valueChangedOnTap('6');
             },
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -91,7 +93,7 @@ class Keyboard extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              pinCodeProvider.receivingDigit('1');
+              valueChangedOnTap('1');
             },
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -103,7 +105,7 @@ class Keyboard extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              pinCodeProvider.receivingDigit('2');
+              valueChangedOnTap('2');
             },
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -115,7 +117,7 @@ class Keyboard extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              pinCodeProvider.receivingDigit('3');
+              valueChangedOnTap('3');
             },
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -125,19 +127,10 @@ class Keyboard extends StatelessWidget {
               style: TextStyle(fontSize: 35, color: Colors.black, fontWeight: FontWeight.normal),
             ),
           ),
-          TextButton(
-            onPressed: () {},
-            style: ButtonStyle(
-              overlayColor: MaterialStateProperty.all(Colors.black12),
-            ),
-            child: const Text(
-              '',
-              style: TextStyle(fontSize: 35, color: Colors.black, fontWeight: FontWeight.normal),
-            ),
-          ),
+          Container(),
           TextButton(
             onPressed: () {
-              pinCodeProvider.receivingDigit('0');
+              valueChangedOnTap('0');
             },
             style: ButtonStyle(
               overlayColor: MaterialStateProperty.all(Colors.black12),
@@ -148,7 +141,7 @@ class Keyboard extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: pinCodeProvider.clear,
+            onPressed: onClean,
             icon: const Icon(Icons.arrow_back),
             iconSize: 35,
             splashRadius: 70,
