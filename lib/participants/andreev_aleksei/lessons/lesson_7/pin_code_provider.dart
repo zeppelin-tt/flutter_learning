@@ -118,7 +118,7 @@ class PinCodeProvider extends ChangeNotifier {
     if (inputNumber.length == 1) {
       color_2 = Colors.white;
     }
-    if (inputNumber.length == 2){
+    if (inputNumber.length == 2) {
       color_3 = Colors.white;
     }
     notifyListeners();

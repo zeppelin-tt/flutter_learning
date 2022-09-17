@@ -79,11 +79,12 @@ class _CheckPinCodePageState extends State<CheckPinCodePage> {
               ),
             ),
             Keyboard(
-              valueChangedOnTap: (val) {pinCodeProvider.receivingDigit(val);},
+              valueChangedOnTap: (val) {
+                pinCodeProvider.receivingDigit(val);
+              },
               onClean: () {
                 setState(pinCodeProvider.removingLastDigit);
               },
-
             ),
           ]),
         ),
@@ -98,21 +99,19 @@ class _CheckPinCodePageState extends State<CheckPinCodePage> {
       await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
         return const AndreevAlekseiLesson7Page();
       }));
-    }
-
-    else{
-      if(pinCodeProvider.inputNumber.length == 4) {
+    } else {
+      if (pinCodeProvider.inputNumber.length == 4) {
         pinCodeProvider.pinCodeError();
-        if (pinCodeProvider.attemptsQuantity == 0){
-          pinCodeProvider..attemptsQuantity = 3
-          ..dotsCleaning()
-          ..error = '';
+        if (pinCodeProvider.attemptsQuantity == 0) {
+          pinCodeProvider
+            ..attemptsQuantity = 3
+            ..dotsCleaning()
+            ..error = '';
           await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
             return const ButtonPage();
           }));
         }
       }
-
     }
   }
 }

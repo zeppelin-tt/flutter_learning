@@ -67,11 +67,12 @@ class _AndreevAlekseiLesson7PageState extends State<AndreevAlekseiLesson7Page> {
               ),
             ),
             Keyboard(
-              valueChangedOnTap: (val) {pinCodeProvider.receivingDigit(val);},
+              valueChangedOnTap: (val) {
+                pinCodeProvider.receivingDigit(val);
+              },
               onClean: () {
                 setState(pinCodeProvider.removingLastDigit);
               },
-
             ),
           ]),
         ),
@@ -81,9 +82,9 @@ class _AndreevAlekseiLesson7PageState extends State<AndreevAlekseiLesson7Page> {
 
   Future<void> fourthDotBehavior() async {
     final pinCodeProvider = context.read<PinCodeProvider>();
-      pinCodeProvider.dotsCleaning();
-      await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-        return const ButtonPage();
-      }));
+    pinCodeProvider.dotsCleaning();
+    await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      return const ButtonPage();
+    }));
   }
 }
