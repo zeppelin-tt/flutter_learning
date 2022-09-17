@@ -8,15 +8,15 @@ class AndreevAlekseiLesson6Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Material(
-        child: SafeArea(
-          child: Stack(
-            children: List.generate(
-              68,
-              (index) => const AnimatedBubble(),
-            ),
+      child: SafeArea(
+        child: Stack(
+          children: List.generate(
+            68,
+            (index) => const AnimatedBubble(),
           ),
-    ),);
+        ),
+      ),
+    );
   }
 }

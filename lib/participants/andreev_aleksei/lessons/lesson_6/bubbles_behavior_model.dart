@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class BubblesBehaviorModel extends ChangeNotifier {
   double radiusCoefficient = 1;
 
-  double setPrimaryRadius(){
+  double setPrimaryRadius() {
     return (0.05 + Random().nextInt(100) / 1000).sw;
   }
 
@@ -22,7 +22,7 @@ class BubblesBehaviorModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void increasingRadius(){
+  void increasingRadius() {
     radiusCoefficient = 1.03;
     notifyListeners();
   }
