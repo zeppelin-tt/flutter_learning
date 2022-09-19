@@ -24,7 +24,7 @@ class _View extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => AnimationModel(top: 5, left: 5, width: 30, height: 30, color: Colors.green),
+      create: (context) => AnimationModel(),
       child: Material(
         color: Colors.blue.shade100,
         child: Consumer<AnimationModel>(builder: (context, model, child) {
@@ -32,7 +32,6 @@ class _View extends StatelessWidget {
             builder: (context, constraints) {
               final maxWidth = constraints.biggest.width;
               final maxHeight = constraints.biggest.height;
-
               return Stack(
                 children: [
                   Stack(
@@ -103,46 +102,8 @@ class _BallWidget extends StatelessWidget {
   }
 }
 
-// class Content {
-//   final VoidCallback onTap;
-//   double width;
-//   double height;
-//   Content({required this.onTap, required this.height, required this.width});
-//
-//   List<Widget> fillStack(double maxWidth, double maxHeight) {
-//     for (var i = 0; i != 69; i++) {
-//       final width = maxWidth * (0.05 + Random().nextInt(15).toDouble() / 100);
-//       this.width = width;
-//       height = width;
-//       listOfBalls.add(_BallWidget(
-//         top: Random().nextDouble() * (maxHeight - width),
-//         left: Random().nextDouble() * (maxWidth - width),
-//         width: this.width,
-//         height: height,
-//         color: Color.fromRGBO(Random().nextInt(255), Random().nextInt(255), Random().nextInt(255), 0.7),
-//         onTap: onTap,
-//       ));
-//     }
-//
-//     return listOfBalls;
-//   }
-// }
-
 class AnimationModel extends ChangeNotifier {
-  double top;
-  double left;
-  double width;
-  double height;
-  Color color;
   List<_BallWidget> listOfBalls = [];
-
-  AnimationModel({
-    required this.width,
-    required this.height,
-    required this.top,
-    required this.left,
-    required this.color,
-  });
 
   void setSizeUp(int index) {
     final tempList = <_BallWidget>[];
@@ -207,8 +168,8 @@ class AnimationModel extends ChangeNotifier {
       listOfBalls.add(_BallWidget(
         top: Random().nextDouble() * (maxHeight - randomWidth),
         left: Random().nextDouble() * (maxWidth - randomWidth),
-        width: width,
-        height: height,
+        width: randomWidth,
+        height:randomWidth,
         color: Color.fromRGBO(Random().nextInt(255), Random().nextInt(255), Random().nextInt(255), 0.7),
         onTap: () {
           setSizeUp(iterator);
