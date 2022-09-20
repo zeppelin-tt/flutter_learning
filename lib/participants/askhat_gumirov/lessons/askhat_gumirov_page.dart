@@ -23,7 +23,7 @@ class AskhatGumirovPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: (screenWidth - buttonWidth) / 2),
             children: [
               AppButton(
-                text: 'Lesson 2',
+                text: 'Lesson 3',
                 onPressed: () => goTo(const Lesson3()),
                 width: buttonWidth,
                 backgroundColor: const Color(0xFFB1CDCD),
