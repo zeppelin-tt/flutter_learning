@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/schennikov_maksim_page.dart';
+import 'package:flutter_learning/participants/trachuk_vladyslav/trachuk_vladyslav_page.dart';
+
 
 class MainPage extends StatelessWidget {
   const MainPage({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,82 +22,67 @@ class MainPage extends StatelessWidget {
               children: [
                 AppButton(
                   text: 'Щенников Максим',
-                  onPressed: () async {
-                    await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                      return const SchennikovMaksimPage();
-                    }));
-                  },
+                  onPressed: () {},
                   width: buttonWidth,
                   isInverted: true,
                 ),
                 AppButton(
-                  text: 'Алексей Андреев',
+                  text: 'Трачук Владислав',
                   onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                      return const TrachukVladyslavPage();
+                    }));
                   },
+                  width: buttonWidth,
+                ),
+                AppButton(
+                  text: 'Алексей Андреев',
+                  onPressed: () {},
                   width: buttonWidth,
                 ),
                 AppButton(
                   text: 'Денис Зайцев',
-                  onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
-                  },
+                  onPressed: () {},
                   width: buttonWidth,
                 ),
                 AppButton(
                   text: 'Максим Павловский',
-                  onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
-                  },
+                  onPressed: () {},
                   width: buttonWidth,
                 ),
                 AppButton(
                   text: 'Михаил Елисеев',
-                  onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
-                  },
+                  onPressed: () {},
                   width: buttonWidth,
                 ),
                 AppButton(
                   text: 'Светлана Харланенкова',
-                  onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
-                  },
+                  onPressed: () {},
                   width: buttonWidth,
                 ),
                 AppButton(
                   text: 'Андрей Харланенков',
-                  onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
-                  },
+                  onPressed: () {},
                   width: buttonWidth,
                 ),
                 AppButton(
                   text: 'Владимир Бурба',
-                  onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
-                  },
+                  onPressed: () {},
                   width: buttonWidth,
                 ),
                 AppButton(
                   text: 'Анна Бурба',
-                  onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
-                  },
+                  onPressed: () {},
                   width: buttonWidth,
                 ),
                 AppButton(
                   text: 'Роман Сафаров',
-                  onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
-                  },
+                  onPressed: () {},
                   width: buttonWidth,
                 ),
                 AppButton(
                   text: 'Григорий Евграфов',
-                  onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
-                  },
+                  onPressed: () {},
                   width: buttonWidth,
                 ),
               ],
