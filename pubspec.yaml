@@ -12,15 +12,16 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_screenutil: ^5.5.4
-  flutter_svg: ^1.1.4
+  flutter_svg: ^1.1.5
   provider: ^6.0.3
   rxdart: ^0.27.5
+  elementary: ^1.5.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   analyzer: 4.6.0
-  dart_code_metrics: ^4.17.1
+  dart_code_metrics: ^4.19.0
 
 flutter:
 
