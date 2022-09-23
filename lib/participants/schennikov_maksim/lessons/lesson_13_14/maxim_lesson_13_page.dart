@@ -1,10 +1,10 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13/di/maxim_lesson_13_widget_model_factory.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13/lesson_13_shape.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13/schennikov_maxim_lesson_13_widget_model.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13/screen_horizontal_slider_widget.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13/view_model/shape_metrics.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13_14/di/maxim_lesson_13_widget_model_factory.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13_14/lesson_13_shape.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13_14/schennikov_maxim_lesson_13_widget_model.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13_14/screen_horizontal_slider_widget.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13_14/view_model/shape_metrics.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 

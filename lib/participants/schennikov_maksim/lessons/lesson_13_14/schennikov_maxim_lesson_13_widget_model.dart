@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13/maxim_lesson_13_page.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13/schennikov_maxim_lesson_13_model.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13/view_model/shape_metrics.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13_14/maxim_lesson_13_page.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13_14/schennikov_maxim_lesson_13_model.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13_14/view_model/shape_metrics.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rxdart/rxdart.dart';
 
