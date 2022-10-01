@@ -4,14 +4,12 @@ class AnimatedDot extends StatelessWidget {
   final Color color;
   final Color borderColor;
   final int position;
-  final VoidCallback? onEnd;
 
   const AnimatedDot({
     required this.position,
     required this.color,
     required this.borderColor,
     super.key,
-    this.onEnd,
   });
 
   @override
@@ -27,7 +25,6 @@ class AnimatedDot extends StatelessWidget {
           color: color,
           border: Border.all(color: borderColor),
         ),
-        onEnd: onEnd,
       ),
     );
   }

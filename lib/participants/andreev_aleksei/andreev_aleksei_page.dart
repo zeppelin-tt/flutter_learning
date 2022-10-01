@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
-
-import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_7/andreev_aleksei_lesson_7_page.dart';
+import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_12/andreev_aleksei_lesson_12.dart';
 
 class AndreevAlekseiPage extends StatelessWidget {
   const AndreevAlekseiPage({
@@ -17,15 +16,13 @@ class AndreevAlekseiPage extends StatelessWidget {
           final screenWidth = constraints.biggest.width;
           final buttonWidth = screenWidth * 0.82;
           return ListView(
-            padding:
-                EdgeInsets.symmetric(vertical: (screenWidth - buttonWidth) / 2),
+            padding: EdgeInsets.symmetric(vertical: (screenWidth - buttonWidth) / 2),
             children: [
               AppButton(
-                text: 'Lesson 7',
-                onPressed: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) {
-                    return const AndreevAlekseiLesson7Page();
+                text: 'Lesson 12',
+                onPressed: () async {
+                  await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                    return const AndreevAlekseiLesson12();
                   }));
                 },
                 width: buttonWidth,
