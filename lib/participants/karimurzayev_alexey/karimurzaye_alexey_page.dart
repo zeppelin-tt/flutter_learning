@@ -33,7 +33,7 @@ class KarimurzayevAlexeyPage extends StatelessWidget {
               ),
               AppButton(
                 text: 'Lesson 6',
-                onPressed: () => goTo(const KarimurzayevAlexeyLesson6Page()),
+                onPressed: () => goTo(KarimurzayevAlexeyLesson6Page()),
                 width: buttonWidth,
                 backgroundColor: const Color(0xFFB1CDCD),
               ),
