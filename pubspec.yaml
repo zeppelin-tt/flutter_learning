@@ -17,6 +17,8 @@ dependencies:
   provider: ^6.0.3
   rxdart: ^0.27.5
   elementary: ^1.5.0
+  redux: ^5.0.0
+  flutter_redux: ^0.10.0
 
 dev_dependencies:
   flutter_test:
