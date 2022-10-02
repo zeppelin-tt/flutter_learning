@@ -3,11 +3,11 @@ import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_1
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(const Main());
+  runApp(const MyApp());
 }
 
-class Main extends StatelessWidget {
-  const Main({
+class MyApp extends StatelessWidget {
+  const MyApp({
     super.key,
   });
 
