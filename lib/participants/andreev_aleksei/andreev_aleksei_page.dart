@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
-import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_12/andreev_aleksei_lesson_12.dart';
 
 import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_15/andreev_aleksei_lesson_15.dart';
 
@@ -11,7 +10,6 @@ class AndreevAlekseiPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Material(
         color: const Color(0xFF373A35),
@@ -22,7 +20,7 @@ class AndreevAlekseiPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: (screenWidth - buttonWidth) / 2),
             children: [
               AppButton(
-                text: 'Lesson 12',
+                text: 'Lesson 15',
                 onPressed: () async {
                   await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                     return AndreevAlekseiLesson15();

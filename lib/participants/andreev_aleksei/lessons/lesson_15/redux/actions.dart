@@ -1,9 +1,9 @@
-class AddDigitAction{
+class AddDigitAction {
   final String entered;
 
   AddDigitAction({required this.entered});
 }
 
-class ClearAction{}
+class ClearAction {}
 
-class ButtonPressedAction{}
+class ButtonPressedAction {}

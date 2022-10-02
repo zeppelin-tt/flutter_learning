@@ -6,18 +6,17 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
 class AndreevAlekseiLesson15 extends StatelessWidget {
+  final store = Store<AppState>(reducer, initialState: AppState().initialState());
 
-  final store = Store<AppState>(reducer, initialState: AppState(entered: '', pinCode: ''));
   AndreevAlekseiLesson15({super.key});
-
 
   @override
   Widget build(BuildContext context) {
     return StoreProvider(
       store: store,
-       child: const MaterialApp(
+      child: const MaterialApp(
         home: PinCodePage(),
-    ),);
+      ),
+    );
   }
-
 }
