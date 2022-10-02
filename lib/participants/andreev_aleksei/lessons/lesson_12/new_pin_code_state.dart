@@ -45,22 +45,22 @@ class NewPinCodeState implements PinCodeState {
   }
 
   @override
-  Color firstDotBackgroundColor() {
+  Color firstDotBorderColor() {
     return Colors.black;
   }
 
   @override
-  Color secondDotBackgroundColor() {
+  Color secondDotBorderColor() {
     return Colors.black;
   }
 
   @override
-  Color thirdDotBackgroundColor() {
+  Color thirdDotBorderColor() {
     return Colors.black;
   }
 
   @override
-  Color fourthDotBackgroundColor() {
+  Color fourthDotBorderColor() {
     return Colors.black;
   }
 }

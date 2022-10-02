@@ -9,19 +9,19 @@ abstract class PinCodeState {
 
   Color firstDotColor();
 
-  Color firstDotBackgroundColor();
+  Color firstDotBorderColor();
 
   Color secondDotColor();
 
-  Color secondDotBackgroundColor();
+  Color secondDotBorderColor();
 
   Color thirdDotColor();
 
-  Color thirdDotBackgroundColor();
+  Color thirdDotBorderColor();
 
   Color fourthDotColor();
 
-  Color fourthDotBackgroundColor();
+  Color fourthDotBorderColor();
 
   PinCodeState copyWith(String val);
 

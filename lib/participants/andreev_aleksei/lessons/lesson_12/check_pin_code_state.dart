@@ -26,10 +26,18 @@ class CheckPinCodeState implements PinCodeState {
 
   @override
   PinCodeState clear() {
-    return CheckPinCodeState(pinCode)
-      ..entered = ''
-      ..attemptsQuantity = attemptsQuantity
-      ..errorMessage = '';
+    if (entered.isNotEmpty) {
+      return CheckPinCodeState(pinCode)
+        ..entered = entered.substring(0, entered.length - 1)
+        ..attemptsQuantity = attemptsQuantity
+        ..errorMessage = '';
+    }
+    else{
+      return CheckPinCodeState(pinCode)
+        ..entered = ''
+        ..attemptsQuantity = attemptsQuantity
+        ..errorMessage = '';
+    }
   }
 
   @override
@@ -65,7 +73,7 @@ class CheckPinCodeState implements PinCodeState {
   }
 
   @override
-  Color firstDotBackgroundColor() {
+  Color firstDotBorderColor() {
     if (errorMessage != '') {
       return Colors.red;
     }
@@ -73,7 +81,7 @@ class CheckPinCodeState implements PinCodeState {
   }
 
   @override
-  Color secondDotBackgroundColor() {
+  Color secondDotBorderColor() {
     if (errorMessage != '') {
       return Colors.red;
     }
@@ -81,7 +89,7 @@ class CheckPinCodeState implements PinCodeState {
   }
 
   @override
-  Color thirdDotBackgroundColor() {
+  Color thirdDotBorderColor() {
     if (errorMessage != '') {
       return Colors.red;
     }
@@ -89,7 +97,7 @@ class CheckPinCodeState implements PinCodeState {
   }
 
   @override
-  Color fourthDotBackgroundColor() {
+  Color fourthDotBorderColor() {
     if (errorMessage != '') {
       return Colors.red;
     }

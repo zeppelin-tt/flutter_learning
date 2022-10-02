@@ -25,7 +25,7 @@ class ButtonState implements PinCodeState {
   }
 
   @override
-  Color firstDotBackgroundColor() {
+  Color firstDotBorderColor() {
     // TODO: implement firstDotBackgroundColor
     throw UnimplementedError();
   }
@@ -37,7 +37,7 @@ class ButtonState implements PinCodeState {
   }
 
   @override
-  Color fourthDotBackgroundColor() {
+  Color fourthDotBorderColor() {
     // TODO: implement fourthDotBackgroundColor
     throw UnimplementedError();
   }
@@ -49,7 +49,7 @@ class ButtonState implements PinCodeState {
   }
 
   @override
-  Color secondDotBackgroundColor() {
+  Color secondDotBorderColor() {
     // TODO: implement secondDotBackgroundColor
     throw UnimplementedError();
   }
@@ -61,7 +61,7 @@ class ButtonState implements PinCodeState {
   }
 
   @override
-  Color thirdDotBackgroundColor() {
+  Color thirdDotBorderColor() {
     // TODO: implement thirdDotBackgroundColor
     throw UnimplementedError();
   }
