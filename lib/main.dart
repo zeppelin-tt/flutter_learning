@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13_14/maxim_lesson_13_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'main_page.dart';
+
 void main() {
-  runApp(const Main());
+  runApp(const MyApp());
 }
 
-class Main extends StatelessWidget {
-  const Main({
+class MyApp extends StatelessWidget {
+  const MyApp({
     super.key,
   });
 
@@ -18,7 +19,7 @@ class Main extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, snapshot) {
         return const MaterialApp(
-          home: MaximLesson13Page(),
+          home: MainPage(),
         );
       },
     );

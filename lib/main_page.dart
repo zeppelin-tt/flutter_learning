@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
+import 'package:flutter_learning/participants/andreev_aleksei/andreev_aleksei_page.dart';
 import 'package:flutter_learning/participants/schennikov_maksim/schennikov_maksim_page.dart';
 
 class MainPage extends StatelessWidget {
@@ -31,8 +32,10 @@ class MainPage extends StatelessWidget {
                 ),
                 AppButton(
                   text: 'Алексей Андреев',
-                  onPressed: () {
-                    // TODO(maxim): implementation [06.09.2022]
+                  onPressed: () async {
+                    await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                      return const AndreevAlekseiPage();
+                    }));
                   },
                   width: buttonWidth,
                 ),
