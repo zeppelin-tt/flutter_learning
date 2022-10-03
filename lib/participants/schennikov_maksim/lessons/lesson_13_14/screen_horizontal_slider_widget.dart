@@ -1,15 +1,20 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/participants/schennikov_maksim/lessons/lesson_13_14/view_controller/slider_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ScreenHorizontalSliderWidget extends StatefulWidget {
   final Size indicatorSize;
   final Color color;
-  final ValueChanged<double> onScrollUpdate;
+  final Duration duration;
+  final SliderController controller;
 
   const ScreenHorizontalSliderWidget({
     required this.indicatorSize,
     required this.color,
-    required this.onScrollUpdate,
+    required this.duration,
+    required this.controller,
     super.key,
   });
 
@@ -19,14 +24,24 @@ class ScreenHorizontalSliderWidget extends StatefulWidget {
 
 class _ScreenHorizontalSliderWidgetState extends State<ScreenHorizontalSliderWidget> {
   late final double maxScrollWidth;
-  late final ScrollController controller;
+  late final ScrollController scrollController;
   final screenWidth = 1.sw;
+  double currentFactor = 0;
 
   @override
   void initState() {
     super.initState();
     maxScrollWidth = screenWidth - widget.indicatorSize.width;
-    controller = ScrollController(initialScrollOffset: maxScrollWidth);
+    scrollController = ScrollController(initialScrollOffset: maxScrollWidth);
+    widget.controller.stream.listen((factor) {
+      if (factor != currentFactor) {
+        unawaited(scrollController.animateTo(
+          factor * maxScrollWidth,
+          duration: widget.controller.animateDuration,
+          curve: Curves.linear,
+        ));
+      }
+    });
   }
 
   @override
@@ -34,13 +49,14 @@ class _ScreenHorizontalSliderWidgetState extends State<ScreenHorizontalSliderWid
     return NotificationListener(
       onNotification: (notice) {
         if (notice is ScrollUpdateNotification) {
-          widget.onScrollUpdate((maxScrollWidth - notice.metrics.pixels) / maxScrollWidth);
+          currentFactor = (maxScrollWidth - notice.metrics.pixels) / maxScrollWidth;
+          widget.controller.add(currentFactor);
         }
         return true;
       },
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        controller: controller,
+        controller: scrollController,
         child: Row(
           children: [
             Container(
@@ -48,7 +64,8 @@ class _ScreenHorizontalSliderWidgetState extends State<ScreenHorizontalSliderWid
               height: widget.indicatorSize.height,
               color: Colors.transparent,
             ),
-            Container(
+            AnimatedContainer(
+              duration: widget.duration,
               width: widget.indicatorSize.width,
               height: widget.indicatorSize.height,
               decoration: BoxDecoration(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppButton extends StatelessWidget {
   final String text;
+  final TextStyle? textStyle;
   final VoidCallback onPressed;
   final double width;
   final bool isInverted;
@@ -10,6 +11,7 @@ class AppButton extends StatelessWidget {
 
   const AppButton({
     required this.text,
+    this.textStyle,
     required this.onPressed,
     required this.width,
     this.isInverted = false,
@@ -31,7 +33,7 @@ class AppButton extends StatelessWidget {
           onPressed: onPressed,
           child: Text(
             text,
-            style: TextStyle(color: isInverted ? backgroundColor : textColor, fontSize: 20),
+            style: textStyle ?? TextStyle(color: isInverted ? backgroundColor : textColor, fontSize: 20),
           ),
         ),
       ),
