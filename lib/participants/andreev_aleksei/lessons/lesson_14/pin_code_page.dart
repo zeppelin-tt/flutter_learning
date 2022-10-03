@@ -22,7 +22,6 @@ class PinCodePage extends ElementaryWidget<PinCodePageWidgetModel> {
           stream: wm.dataStream,
           initialData: wm.dataValue,
           builder: (context, pinCodePageData) {
-            final data = pinCodePageData.requireData;
             return Column(children: [
               Container(
                 height: 0.4.sw,
@@ -59,7 +58,7 @@ class PinCodePage extends ElementaryWidget<PinCodePageWidgetModel> {
                 width: 0.4.sh,
                 height: 0.1.sw,
                 child: Text(
-                  '${wm.errorMessageSetting()}, ${data.entered}, ${data.pinCode}',
+                  wm.errorMessageSetting(),
                   textAlign: TextAlign.center,
                   style: const TextStyle(
                     color: Colors.red,
