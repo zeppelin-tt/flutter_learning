@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/components/app_button.dart';
-import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_12/andreev_aleksei_lesson_12.dart';
+import 'package:flutter_learning/participants/andreev_aleksei/lessons/lesson_14/pin_code_page.dart';
 
 class AndreevAlekseiPage extends StatelessWidget {
   const AndreevAlekseiPage({
@@ -19,10 +19,10 @@ class AndreevAlekseiPage extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: (screenWidth - buttonWidth) / 2),
             children: [
               AppButton(
-                text: 'Lesson 12',
+                text: 'Lesson 14',
                 onPressed: () async {
                   await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                    return const AndreevAlekseiLesson12();
+                    return const PinCodePage();
                   }));
                 },
                 width: buttonWidth,
